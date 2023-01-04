@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.openai.beta.HomePageTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-04T17:06:11" hostname="EPUALVIW064A" time="7.7">
+  <properties/>
+  <testcase name="homepageTest()" classname="com.openai.beta.HomePageTests" time="7.7"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 108.0.5359.71 (1e0e3868ee06e91ad636a874420e3ca3ae3756ac-refs/branch-heads/5359@{#1016}) on port 31188
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[Test worker] INFO com.openapi.beta.logger.SLF4J - Homepage has successfully opened
+[Test worker] INFO com.openapi.beta.logger.SLF4J - login page has successfully opened
+]]></system-err>
+</testsuite>
