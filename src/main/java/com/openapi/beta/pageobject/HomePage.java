@@ -15,7 +15,7 @@ public class HomePage {
     By loginScreenLoginButtonLocator = By.xpath("//*[@id=\"auth-view-page\"]/button[2]");
 
     private final WebDriver driver;
-    private final String url = "https://www.figma.com/";
+    private String url = "https://www.figma.com/";
 
 
     SLF4J logging = new SLF4J();
