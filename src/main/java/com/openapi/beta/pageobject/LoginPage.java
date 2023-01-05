@@ -1,6 +1,6 @@
 package com.openapi.beta.pageobject;
 
-import com.openapi.beta.logger.SLF4J;
+import com.openapi.beta.logger.Logs;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ import java.time.Duration;
 
 public class LoginPage {
     private final WebDriver driver;
-    SLF4J logging;
+    Logs logs = new Logs();
 
     static final Duration timeout = Duration.ofSeconds(1);
 
@@ -33,26 +33,26 @@ public class LoginPage {
 
     public void openLoginPage() {
         driver.get("https://www.figma.com/login?locale=en");
-        logging.process("LoginPage has successfully opened");
+        logs.process("LoginPage has successfully opened");
     }
 
     public void enterUsername(String username) {
         new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
         usernameLocator.sendKeys(username);
-        logging.process("Username filled");
+        logs.process("Username filled");
     }
 
     public void enterPassword(String password) {
         passwordLocator.sendKeys(password);
-        logging.process("Password filled");
+        logs.process("Password filled");
     }
 
     public void clickLoginButton() {
         loginScreenLoginButton.submit();
-        logging.process("Successfully logged in");
+        logs.process("Successfully logged in");
     }
 
-    public boolean isLogoutButtonDisplayed() {
+    public boolean isLogInButtonDisplayed() {
         loginScreenLoginButton.isDisplayed();
         return true;
     }

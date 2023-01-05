@@ -2,32 +2,27 @@ package com.openai.beta;
 
 import com.openapi.beta.pageobject.HomePage;
 import com.openapi.beta.pageobject.LoginPage;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.TestWatcher;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
-import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestClass extends BaseTest{
+public class TestClass extends BaseTest implements TestWatcher {
 
-    private WebDriver driver;
-    private LoginPage loginPage;
-    private HomePage homePage;
+    private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);
+    private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 
-    @BeforeMethod
-    public void setup() {
-        driver = new ChromeDriver();
-        loginPage = PageFactory.initElements(driver, LoginPage.class);
-        homePage = PageFactory.initElements(driver, HomePage.class);
+
+    @BeforeEach
+    void setUp() {
+        // code to be executed before each test
     }
+
     @Test
     public void testHomePage() {
         homePage.openHomePage();
@@ -38,17 +33,16 @@ public class TestClass extends BaseTest{
     @Test
     public void testSuccessfulLogin() {
         homePage.openHomePage();
-        Duration timeout = Duration.ofSeconds(1);
-        new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
         assertTrue(homePage.isLogoutButtonDisplayed());
         homePage.openLoginPage();
-        assertTrue(loginPage.isLogoutButtonDisplayed());
+        assertTrue(loginPage.isLogInButtonDisplayed());
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
         loginPage.enterUsername("alex.bayda@yahoo.ca");
         loginPage.enterPassword("1q2w3e4r");
         loginPage.clickLoginButton();
     }
 
-    @AfterMethod
+    @AfterEach
     public void tearDown() {
         driver.quit();
     }

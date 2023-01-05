@@ -1,6 +1,6 @@
 package com.openapi.beta.pageobject;
 
-import com.openapi.beta.logger.SLF4J;
+import com.openapi.beta.logger.Logs;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +13,7 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"gatsby-focus-wrapper\"]/div[1]/div[1]/div/a[2]")
     private WebElement loginButtonLocator;
 
-    SLF4J logging = new SLF4J();
+    Logs logs = new Logs();
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -22,12 +22,12 @@ public class HomePage {
 
     public void openHomePage() {
         driver.get("https://www.figma.com");
-        logging.process("Homepage has successfully opened");
+        logs.process("Homepage has successfully opened");
     }
 
     public void openLoginPage() {
         loginButtonLocator.click();
-        logging.process("login page has successfully opened");
+        logs.process("Login page has successfully opened");
     }
 
 

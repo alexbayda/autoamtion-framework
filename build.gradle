@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "io.qameta.allure" version "2.11.2"
 }
 
 group 'org.example'
@@ -17,8 +18,20 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.7.1'
     implementation 'org.slf4j:slf4j-api:2.0.6'
     implementation 'org.slf4j:slf4j-simple:2.0.6'
+    implementation 'io.qameta.allure:allure-maven:2.8'
+    testImplementation 'io.qameta.allure:allure-java-commons:2.12.2'
+
 }
 
 test {
+    useTestNG()
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+
+    allure {
+        version = "2.13.9"
+    }
+
 }
