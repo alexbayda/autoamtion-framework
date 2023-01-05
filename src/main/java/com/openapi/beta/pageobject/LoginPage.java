@@ -12,7 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginPage {
-    private WebDriver driver;
+    private final WebDriver driver;
+    SLF4J logging;
 
     static final Duration timeout = Duration.ofSeconds(1);
 
@@ -30,35 +31,25 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void goTo() {
+    public void openLoginPage() {
         driver.get("https://www.figma.com/login?locale=en");
-    }
-
-    SLF4J logging = new SLF4J();
-
-    public LoginPage openLoginPage() {
-        goTo();
         logging.process("LoginPage has successfully opened");
-        return this;
     }
 
-    public LoginPage enterUsername(String username) {
+    public void enterUsername(String username) {
         new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
         usernameLocator.sendKeys(username);
         logging.process("Username filled");
-        return this;
     }
 
-    public LoginPage enterPassword(String password) {
+    public void enterPassword(String password) {
         passwordLocator.sendKeys(password);
         logging.process("Password filled");
-        return this;
     }
 
-    public HomePage clickLoginButton() {
+    public void clickLoginButton() {
         loginScreenLoginButton.submit();
         logging.process("Successfully logged in");
-        return new HomePage(driver);
     }
 
     public boolean isLogoutButtonDisplayed() {

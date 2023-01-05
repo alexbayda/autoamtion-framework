@@ -20,16 +20,14 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    public HomePage openHomePage() {
+    public void openHomePage() {
         driver.get("https://www.figma.com");
         logging.process("Homepage has successfully opened");
-        return this;
     }
 
-    public LoginPage openLoginPage() {
+    public void openLoginPage() {
         loginButtonLocator.click();
         logging.process("login page has successfully opened");
-        return new LoginPage(driver);
     }
 
 
