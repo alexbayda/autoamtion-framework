@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class LoginPage {
 
-    static final Duration timeout = Duration.ofSeconds(60);
+    static final Duration timeout = Duration.ofSeconds(1);
     By usernameLocator = By.id("email");
     By passwordLocator = By.id("current-password");
     By loginButtonLocator = By.xpath("//*[@id=\"auth-view-page\"]/button[2]");

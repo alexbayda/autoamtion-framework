@@ -5,9 +5,9 @@ import com.openapi.beta.pageobject.HomePage;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePageTests {
+public class HomePageTests extends BaseTest{
 
-    private final HomePage homePage = PageFactory.initElements(WebDriver.getInstance().getDriver(), HomePage.class);
+    private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
     @Test
     void homepageTest() {
