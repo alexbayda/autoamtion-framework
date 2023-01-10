@@ -14,10 +14,7 @@ public class WebDriver {
 
 
     public static WebDriver getInstance() {
-        if (instanceOfDriver == null) {
-            instanceOfDriver = new WebDriver();
-        }
-
+        instanceOfDriver = new WebDriver();
         return instanceOfDriver;
     }
 
