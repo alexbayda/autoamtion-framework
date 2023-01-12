@@ -1,4 +1,4 @@
-package com.openapi.beta.driver;
+package com.figma.beta.driver;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;

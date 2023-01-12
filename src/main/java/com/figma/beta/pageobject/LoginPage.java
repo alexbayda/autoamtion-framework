@@ -1,6 +1,6 @@
-package com.openapi.beta.pageobject;
+package com.figma.beta.pageobject;
 
-import com.openapi.beta.logger.Logs;
+import com.figma.beta.logger.Logs;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,13 +18,22 @@ public class LoginPage {
     static final Duration timeout = Duration.ofSeconds(1);
 
     @FindBy(id = "email")
-    private WebElement usernameLocator;
+    public WebElement usernameLocator;
 
     @FindBy(id = "current-password")
     private WebElement passwordLocator;
 
     @FindBy(xpath = "//*[@id=\"auth-view-page\"]/button[2]")
     private WebElement loginScreenLoginButton;
+
+    @FindBy(xpath = "//*[@id=\"auth-view-page\"]/div[2]")
+    public WebElement emailError;
+
+    @FindBy(xpath = "//*[@id=\"auth-view-page\"]/div[1]")
+    public WebElement passwordEmailError;
+
+    @FindBy(xpath = "//*[@id=\"react-page\"]/div/div/div[1]/div[1]")
+    public WebElement navigationBar;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -49,12 +58,18 @@ public class LoginPage {
 
     public void clickLoginButton() {
         loginScreenLoginButton.submit();
-        logs.process("Successfully logged in");
+        logs.process("Successfully clicked");
     }
 
     public boolean isLogInButtonDisplayed() {
         loginScreenLoginButton.isDisplayed();
         return true;
+    }
+
+    public void waitToLoad(WebElement webElement){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        logs.process("Element found on page");
     }
 }
 
