@@ -11,14 +11,14 @@ public class UserFactory {
         return new UserBuilder()
                 .setName("Alex")
                 .setSurname("Bayda")
-                .setEmail("alex.bayda@yahoo.ca")
-                .setPassword("1q2w3e4r")
+                .setUsername("John Doe")
+                .setPassword("ThisIsNotAPassword")
                 .make();
     }
 
     public static UserDto getRandomEmailUser() {
         return new UserBuilder()
-                .setEmail(RandomGenerator.getEmail())
+                .setUsername(RandomGenerator.getEmail())
                 .setPassword(RandomGenerator.getPassword())
                 .make();
     }

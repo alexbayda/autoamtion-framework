@@ -3,13 +3,10 @@ package com.figma.beta.pageobject;
 import com.figma.beta.logger.Logs;
 import com.figma.beta.testdatalayer.dto.UserDto;
 import com.figma.beta.utilities.WaitToLoad;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -24,37 +21,32 @@ public class LoginPage {
 
     static final Duration timeout = Duration.ofSeconds(15);
 
-    @FindBy(id = "weebly-email")
-    public WebElement emailLocator;
-
-    @FindBy(id = "weebly-username")
+    @FindBy(id = "txt-username")
     public WebElement userNameLocator;
-    @FindBy(id = "weebly-password")
+    @FindBy(id = "txt-password")
     private WebElement passwordLocator;
 
-    @FindBy(id = "weebly-lookup")
-    private WebElement lookUpSpace;
-
-    @FindBy(xpath = "//*[@id=\"weebly-login\"]/div[2]/div[2]")
-    public WebElement loginError;
+    @FindBy(xpath = "//*[@id=\"login\"]/div/div/div[1]/p[2]")
+    public WebElement loginErrorMessage;
 
     @FindBy(xpath = "//*[@id=\"weebly-lookup\"]/div[2]/div/button")
     public WebElement nextButton;
-
-    @FindBy(xpath = "//*[@id=\"weebly-login\"]/div[2]/div/button")
+    @FindBy(id = "btn-login")
     public WebElement logInButton;
+    @FindBy(id = "btn-book-appointment")
+    public WebElement bookAppointmentButton;
+
 
 
 
     public void openLoginPage() {
-        driver.get("https://www.weebly.com/app/front-door/signin?path=login#/");
-        WaitToLoad.waitForElement(driver, lookUpSpace, 30);
+        driver.get("https://katalon-demo-cura.herokuapp.com/profile.php#login");
+        WaitToLoad.waitForElement(driver, logInButton, 30);
         logs.process("LoginPage has successfully opened");
     }
 
     public void enterUsername(String username) {
-        new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOfElementLocated((By) emailLocator));
-        emailLocator.sendKeys(username);
+        userNameLocator.sendKeys(username);
         logs.process("Username filled");
     }
 
@@ -63,27 +55,22 @@ public class LoginPage {
         logs.process("Password filled");
     }
 
-    public void clickNextButton() {
-        nextButton.submit();
-        logs.process("Successfully clicked");
-    }
     public void clickLoginButton() {
         logInButton.submit();
         logs.process("Successfully clicked");
     }
 
-    public boolean lookUpSpace() {
-        lookUpSpace.isDisplayed();
+    public boolean isElementDisplayed(WebElement element) {
+        WaitToLoad.waitForElement(driver, element, 30);
         return true;
     }
 
     public void signIn(UserDto user) {
-        emailLocator.sendKeys(user.getEmail());
-        nextButton.click();
-        WaitToLoad.waitForElement(driver, logInButton, 30);
+        userNameLocator.sendKeys(user.getUsername());
         passwordLocator.sendKeys(user.getPassword());
         logInButton.click();
     }
+
 }
 
 
