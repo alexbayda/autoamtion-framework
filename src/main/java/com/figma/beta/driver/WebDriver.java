@@ -23,5 +23,3 @@ public class WebDriver {
     }
 }
 
-//http://makeseleniumeasy.com/2018/01/11/singleton-design-pattern-in-selenium-webdriver/
-

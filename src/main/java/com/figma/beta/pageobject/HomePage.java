@@ -10,18 +10,20 @@ public class HomePage {
 
     private final WebDriver driver;
 
-    @FindBy(xpath = "//*[@id=\"gatsby-focus-wrapper\"]/div[1]/div[1]/div/a[2]")
-    private WebElement loginButtonLocator;
-
-    Logs logs = new Logs();
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(id = "login-button")
+    private WebElement loginButtonLocator;
+
+    Logs logs = new Logs();
+
+
+
     public void openHomePage() {
-        driver.get("https://www.figma.com");
+        driver.get("https://www.weebly.com/ca");
         logs.process("Homepage has successfully opened");
     }
 
