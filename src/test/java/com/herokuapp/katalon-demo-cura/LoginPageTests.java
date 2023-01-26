@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LoginPageTests extends BaseTest {
+public class LoginPageTests extends com.figma.beta.BaseTest {
 
 
     private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
@@ -40,6 +40,7 @@ public class LoginPageTests extends BaseTest {
     public void testInvalidPassword() {
         UserDto user = UserFactory.getRandomEmailUser();
         loginPage.signIn(user);
+        assertTrue(loginPage.isElementDisplayed(loginPage.loginErrorMessage));
     }
 
 }

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BookAppointmentTests extends BaseTest {
+public class BookAppointmentTests extends com.figma.beta.BaseTest {
 
     private final BookAppointment bookAppointment = PageFactory.initElements(driver, BookAppointment.class);
     private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);

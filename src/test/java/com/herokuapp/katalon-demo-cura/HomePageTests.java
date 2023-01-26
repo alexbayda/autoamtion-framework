@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class HomePageTests extends BaseTest {
+public class HomePageTests extends com.figma.beta.BaseTest {
 
     private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
