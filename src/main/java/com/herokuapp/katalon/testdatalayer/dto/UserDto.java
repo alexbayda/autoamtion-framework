@@ -1,4 +1,4 @@
-package com.figma.beta.testdatalayer.dto;
+package com.herokuapp.katalon.testdatalayer.dto;
 
 public class UserDto {
 

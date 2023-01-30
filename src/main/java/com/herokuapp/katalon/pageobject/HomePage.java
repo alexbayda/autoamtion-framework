@@ -1,7 +1,7 @@
-package com.figma.beta.pageobject;
+package com.herokuapp.katalon.pageobject;
 
-import com.figma.beta.logger.Logs;
-import com.figma.beta.utilities.WaitToLoad;
+import com.herokuapp.katalon.logger.Logs;
+import com.herokuapp.katalon.utilities.WebDriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,18 +25,12 @@ public class HomePage {
     @FindBy(id = "btn-login")
     public WebElement loginButtonLocator;
 
-    @FindBy(css = "#sidebar-wrapper > ul > li:nth-child(3) > a")
-    public WebElement homeButtonLocator;
-
-    @FindBy(id = "btn-make-appointment")
-    public WebElement makeAppointmentButtonLocator;
-
     Logs logs = new Logs();
 
 
     public void openHomePage() {
         driver.get("https://katalon-demo-cura.herokuapp.com/");
-        WaitToLoad.waitForElement(driver, hamburgerMenuLocator, 30);
+        WebDriverUtils.waitForElement(driver, hamburgerMenuLocator, 30);
         logs.process("Homepage has successfully opened");
     }
 
@@ -47,7 +41,7 @@ public class HomePage {
     }
 
     public boolean isHomepageElementDisplayed(WebElement element) {
-        WaitToLoad.waitForElement(driver, element, 30);
+        WebDriverUtils.waitForElement(driver, element, 30);
         return true;
     }
 }

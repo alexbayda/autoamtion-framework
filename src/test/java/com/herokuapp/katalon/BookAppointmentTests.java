@@ -1,17 +1,18 @@
-package com.figma.beta;
+package com.herokuapp.katalon;
 
-import com.figma.beta.pageobject.BookAppointment;
-import com.figma.beta.pageobject.HomePage;
-import com.figma.beta.pageobject.LoginPage;
-import com.figma.beta.testdatalayer.UserFactory;
-import com.figma.beta.testdatalayer.dto.UserDto;
+import com.herokuapp.katalon.pageobject.BookAppointment;
+import com.herokuapp.katalon.pageobject.HomePage;
+import com.herokuapp.katalon.pageobject.LoginPage;
+import com.herokuapp.katalon.testdatalayer.UserFactory;
+import com.herokuapp.katalon.testdatalayer.dto.UserDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
 
+import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class BookAppointmentTests extends com.figma.beta.BaseTest {
+public class BookAppointmentTests extends BaseTest {
 
     private final BookAppointment bookAppointment = PageFactory.initElements(driver, BookAppointment.class);
     private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);
@@ -26,14 +27,18 @@ public class BookAppointmentTests extends com.figma.beta.BaseTest {
         assertTrue(homePage.isHomepageElementDisplayed(homePage.hamburgerMenuLocator));
     }
 
-
     @Test
     public void makeAppointment() {
         bookAppointment.clickBookAppointmentButton();
         UserDto user = UserFactory.getValidUser();
         loginPage.signIn(user);
         assertTrue(loginPage.isElementDisplayed(loginPage.bookAppointmentButton));
-        bookAppointment.fillAppointmentForm();
-        assertTrue(bookAppointment.isElementDisplayed(bookAppointment.summaryLocator));
+        bookAppointment.fillFacilityDropDownByText("Hongkong CURA Healthcare Center");
+        bookAppointment.checkHospitalReadmission();
+        clickRandomRadioButton(bookAppointment.findElementsByIndex());
+        bookAppointment.fillRandomDate();
+        bookAppointment.fillCommentField("This is a comment");
+        bookAppointment.submitAppointment();
+        assertTrue(bookAppointment.confirmationIsDisplayed(bookAppointment.summaryLocator));
     }
 }

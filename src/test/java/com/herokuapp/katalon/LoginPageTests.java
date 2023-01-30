@@ -1,15 +1,15 @@
-package com.figma.beta;
+package com.herokuapp.katalon;
 
-import com.figma.beta.pageobject.LoginPage;
-import com.figma.beta.testdatalayer.UserFactory;
-import com.figma.beta.testdatalayer.dto.UserDto;
+import com.herokuapp.katalon.pageobject.LoginPage;
+import com.herokuapp.katalon.testdatalayer.UserFactory;
+import com.herokuapp.katalon.testdatalayer.dto.UserDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LoginPageTests extends com.figma.beta.BaseTest {
+public class LoginPageTests extends BaseTest {
 
 
     private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);

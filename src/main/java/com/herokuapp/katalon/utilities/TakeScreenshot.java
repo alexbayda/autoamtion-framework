@@ -1,6 +1,6 @@
-package com.figma.beta.utilities;
+package com.herokuapp.katalon.utilities;
 
-import com.figma.beta.driver.WebDriver;
+import com.herokuapp.katalon.driver.WebDriver;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.openqa.selenium.OutputType;

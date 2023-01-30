@@ -1,8 +1,8 @@
-package com.figma.beta.testdatalayer;
+package com.herokuapp.katalon.testdatalayer;
 
-import com.figma.beta.testdatalayer.builder.UserBuilder;
-import com.figma.beta.testdatalayer.dto.UserDto;
-import com.figma.beta.utilities.RandomGenerator;
+import com.herokuapp.katalon.testdatalayer.builder.UserBuilder;
+import com.herokuapp.katalon.testdatalayer.dto.UserDto;
+import com.herokuapp.katalon.utilities.RandomGenerator;
 
 public class UserFactory {
 

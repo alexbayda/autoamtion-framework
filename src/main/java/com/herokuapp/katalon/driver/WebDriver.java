@@ -1,4 +1,4 @@
-package com.figma.beta.driver;
+package com.herokuapp.katalon.driver;
 
 
 import org.openqa.selenium.chrome.ChromeDriver;

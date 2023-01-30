@@ -1,6 +1,6 @@
-package com.figma.beta.testdatalayer.builder;
+package com.herokuapp.katalon.testdatalayer.builder;
 
-import com.figma.beta.testdatalayer.dto.UserDto;
+import com.herokuapp.katalon.testdatalayer.dto.UserDto;
 
 public class UserBuilder {
 

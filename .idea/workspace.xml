@@ -4,34 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d3f410-3f3d-42ef-ab58-9692f78d51dd" name="Changes" comment="fix website and add tests">
+    <list default="true" id="45d3f410-3f3d-42ef-ab58-9692f78d51dd" name="Changes" comment="add randomizers for date + radioButtons">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomDateGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomRadioButtonClicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/driver/WebDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/driver/WebDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/logger/Logs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/logger/Logs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/pageobject/BookAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/pageobject/BookAppointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/pageobject/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/pageobject/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/pageobject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/pageobject/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/testdatalayer/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/testdatalayer/UserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/testdatalayer/builder/UserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/testdatalayer/builder/UserBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/testdatalayer/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/testdatalayer/dto/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/utilities/RandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/utilities/RandomGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/utilities/TakeScreenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/utilities/TakeScreenshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/figma/beta/utilities/WaitToLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/utilities/WaitToLoad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/figma/beta/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/figma/beta/BookAppointmentTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/BookAppointmentTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/figma/beta/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/HomePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/figma/beta/LoginPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/LoginPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/driver/WebDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/driver/WebDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/logger/Logs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/logger/Logs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/pageobject/BookAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/BookAppointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/pageobject/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/pageobject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/testdatalayer/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/testdatalayer/UserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/testdatalayer/builder/UserBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/testdatalayer/builder/UserBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/testdatalayer/dto/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/testdatalayer/dto/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/utilities/RandomGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/utilities/TakeScreenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/TakeScreenshot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon-demo-cura/utilities/WaitToLoad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/WebDriverUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/BookAppointmentTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BookAppointmentTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon-demo-cura/LoginPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/LoginPageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,11 +115,12 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vcs.patch.path&quot;: &quot;C:/Users/Oleksandr_Bayda/Desktop&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ui-automation-framework [allureReport]">
-    <configuration name="Tests in 'com.figma.beta'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LoginPageTests">
+    <configuration name="BookAppointmentTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -128,7 +133,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.figma.beta.*&quot;" />
+            <option value="&quot;com.herokuapp.katalon.BookAppointmentTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -138,7 +143,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'com.openai.beta'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="HomePageTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -151,7 +156,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.openai.beta.*&quot;" />
+            <option value="&quot;com.herokuapp.katalon.HomePageTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,76 +166,82 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ui-automation-framework [allureReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginPageTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="allureReport" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.herokuapp.katalon.LoginPageTests&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ui-automation-framework [allureServe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginPageTests.testInvalidEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="allureServe" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.herokuapp.katalon.LoginPageTests.testInvalidEmail&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ui-automation-framework [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginPageTests.testSuccessfulLogin" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.herokuapp.katalon.LoginPageTests.testSuccessfulLogin&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.ui-automation-framework [allureReport]" />
-        <item itemvalue="Gradle.Tests in 'com.figma.beta'" />
-        <item itemvalue="Gradle.ui-automation-framework [clean]" />
-        <item itemvalue="Gradle.ui-automation-framework [allureServe]" />
-        <item itemvalue="Gradle.Tests in 'com.openai.beta'" />
+        <item itemvalue="Gradle.LoginPageTests" />
+        <item itemvalue="Gradle.HomePageTests" />
+        <item itemvalue="Gradle.BookAppointmentTests" />
+        <item itemvalue="Gradle.LoginPageTests.testSuccessfulLogin" />
+        <item itemvalue="Gradle.LoginPageTests.testInvalidEmail" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672853792736</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix test cases">
+      <created>1674747883072</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1674747883072</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +317,15 @@
     <MESSAGE value="add framework" />
     <MESSAGE value="add tests" />
     <MESSAGE value="fix homepage url" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix homepage url" />
+    <MESSAGE value="fix test cases" />
+    <MESSAGE value="add randomizers for date + radioButtons" />
+    <option name="LAST_COMMIT_MESSAGE" value="add randomizers for date + radioButtons" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="user" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

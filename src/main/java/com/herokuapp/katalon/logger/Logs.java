@@ -1,4 +1,4 @@
-package com.figma.beta.logger;
+package com.herokuapp.katalon.logger;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
