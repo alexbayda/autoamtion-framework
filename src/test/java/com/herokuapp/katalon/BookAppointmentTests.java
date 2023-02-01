@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
 
-import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.*;
+import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.clickRandomRadioButton;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class BookAppointmentTests extends BaseTest {
@@ -19,10 +19,8 @@ public class BookAppointmentTests extends BaseTest {
     private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 
 
-
     @BeforeEach
     void setUp() {
-        driver.manage().deleteAllCookies();
         homePage.openHomePage();
         assertTrue(homePage.isHomepageElementDisplayed(homePage.hamburgerMenuLocator));
     }
@@ -35,7 +33,7 @@ public class BookAppointmentTests extends BaseTest {
         assertTrue(loginPage.isElementDisplayed(loginPage.bookAppointmentButton));
         bookAppointment.fillFacilityDropDownByText("Hongkong CURA Healthcare Center");
         bookAppointment.checkHospitalReadmission();
-        clickRandomRadioButton(bookAppointment.findElementsByIndex());
+        clickRandomRadioButton(bookAppointment.getHealthCareRadioButtonList());
         bookAppointment.fillRandomDate();
         bookAppointment.fillCommentField("This is a comment");
         bookAppointment.submitAppointment();

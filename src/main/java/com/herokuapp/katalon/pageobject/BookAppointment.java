@@ -3,7 +3,7 @@ package com.herokuapp.katalon.pageobject;
 import com.herokuapp.katalon.logger.Logs;
 import com.herokuapp.katalon.utilities.RandomDateGenerator;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
-import org.openqa.selenium.By;
+import lombok.Getter;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,13 +14,16 @@ import java.util.List;
 
 import static com.herokuapp.katalon.utilities.WebDriverUtils.selectValueFromDropdown;
 
+@Getter
 public class BookAppointment {
 
-    private WebDriver driver;
+    private final WebDriver driver;
+
     public BookAppointment(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     Logs logs = new Logs();
 
     @FindBy(id = "btn-make-appointment")
@@ -44,10 +47,9 @@ public class BookAppointment {
     @FindBy(id = "summary")
     public WebElement summaryLocator;
 
-//    @FindBy(how = How.CSS, using = "input[type='radio']")
-//    public By healthCareRadioButtonList;
+    @FindBy(css = "input[type='radio']")
+    private List<WebElement> healthCareRadioButtonList;
 
-    public By healthCareRadioButtonList = By.cssSelector("input[type='radio']");
 
     public void clickBookAppointmentButton() {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -55,27 +57,23 @@ public class BookAppointment {
         logs.process("Successfully clicked");
     }
 
-    public void fillFacilityDropDownByText(String text){
+    public void fillFacilityDropDownByText(String text) {
         selectValueFromDropdown(facilityDropDownLocator, text);
     }
 
-    public void checkHospitalReadmission(){
+    public void checkHospitalReadmission() {
         readmissionCheckmarkLocator.click();
     }
 
-    public List<WebElement> findElementsByIndex(){
-        return driver.findElements(healthCareRadioButtonList);
-    }
-
-    public void fillRandomDate(){
+    public void fillRandomDate() {
         enterDateLocator.sendKeys(RandomDateGenerator.fillRandomDate());
     }
 
-    public void fillCommentField(String comment){
+    public void fillCommentField(String comment) {
         txtCommentLocator.sendKeys(comment);
     }
 
-    public void submitAppointment(){
+    public void submitAppointment() {
         bookAppointmentButtonLocator.click();
     }
 

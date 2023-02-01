@@ -17,6 +17,7 @@ public class LoginPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     Logs logs = new Logs();
 
     static final Duration timeout = Duration.ofSeconds(15);
@@ -35,7 +36,6 @@ public class LoginPage {
     public WebElement logInButton;
     @FindBy(id = "btn-book-appointment")
     public WebElement bookAppointmentButton;
-
 
 
     public void openLoginPage() {
@@ -73,12 +73,6 @@ public class LoginPage {
 }
 
 
-
-
-
-
-
-
 //    public LoginPage submitLoginExpectingFailure() {
 //        driver.findElement(loginButtonLocator).submit();
 //        return new LoginPage(driver);
@@ -89,7 +83,6 @@ public class LoginPage {
 //        typePassword(password);
 //        return submitLogin();
 //    }
-
 
 
 //https://comaqa.gitbook.io/selenium-webdriver-lectures/page-object-pattern.-arkhitektura-testovogo-proekta./ispolzovanie-patterna-page-object.

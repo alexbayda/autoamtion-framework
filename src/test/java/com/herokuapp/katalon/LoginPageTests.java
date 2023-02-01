@@ -18,7 +18,6 @@ public class LoginPageTests extends BaseTest {
     @BeforeEach
     void setUp() {
         loginPage.openLoginPage();
-        driver.manage().deleteAllCookies();
     }
 
 

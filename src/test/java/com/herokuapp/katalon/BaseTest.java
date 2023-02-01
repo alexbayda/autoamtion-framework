@@ -1,21 +1,16 @@
 package com.herokuapp.katalon;
 
+import com.herokuapp.katalon.driver.Driver;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 
-import static com.herokuapp.katalon.driver.WebDriver.getInstance;
+public class BaseTest {
 
-public abstract class BaseTest {
+    WebDriver driver = Driver.getDriver("edge");
 
-    protected static final WebDriver driver = getInstance().getDriver();
 
     @AfterEach
-    void tearDown() {
-        driver.close();
+    public void tearDown() {
+        driver.quit();
     }
-
-//    @AfterAll
-//    static void cleanUp() {
-//        driver.quit();
-//    }
 }

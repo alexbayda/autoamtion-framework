@@ -2,6 +2,7 @@ package com.herokuapp.katalon.pageobject;
 
 import com.herokuapp.katalon.logger.Logs;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,4 +45,11 @@ public class HomePage {
         WebDriverUtils.waitForElement(driver, element, 30);
         return true;
     }
+
+    //JavaScript in Selenium to click an Element
+    public void JsClickLogin() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", loginButtonLocator);
+    }
+
 }

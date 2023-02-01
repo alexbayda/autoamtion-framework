@@ -9,6 +9,7 @@ public class RandomGenerator {
                 RandomStringUtils.randomAlphabetic(3) +
                 ".com";
     }
+
     public static String getPassword() {
         return RandomStringUtils.randomAlphabetic(8);
     }

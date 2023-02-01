@@ -12,10 +12,8 @@ public class HomePageTests extends BaseTest {
     private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
 
-
     @BeforeEach
     void setUp() {
-        driver.manage().deleteAllCookies();
         homePage.openHomePage();
         assertTrue(homePage.isHomepageElementDisplayed(homePage.hamburgerMenuLocator));
     }
