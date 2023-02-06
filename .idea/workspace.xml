@@ -4,39 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d3f410-3f3d-42ef-ab58-9692f78d51dd" name="Changes" comment="add randomizers for date + radioButtons">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/driver/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/driver/DriverSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/StreamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="45d3f410-3f3d-42ef-ab58-9692f78d51dd" name="Changes" comment="add drivers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/driver/WebDriver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/BookAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/BookAppointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomRadioButtonClicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomRadioButtonClicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/TakeScreenshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/TakeScreenshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BookAppointmentTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BookAppointmentTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/HomePageTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/LoginPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/LoginPageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/StreamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/StreamTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +261,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675103888003</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="optimize framework">
+      <created>1675265550434</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675265550434</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add drivers">
+      <created>1675265574572</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675265574572</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -328,7 +312,9 @@
     <MESSAGE value="fix homepage url" />
     <MESSAGE value="fix test cases" />
     <MESSAGE value="add randomizers for date + radioButtons" />
-    <option name="LAST_COMMIT_MESSAGE" value="add randomizers for date + radioButtons" />
+    <MESSAGE value="optimize framework" />
+    <MESSAGE value="add drivers" />
+    <option name="LAST_COMMIT_MESSAGE" value="add drivers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
