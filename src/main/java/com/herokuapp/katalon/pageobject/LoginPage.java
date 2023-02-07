@@ -71,18 +71,3 @@ public class LoginPage {
     }
 
 }
-
-
-//    public LoginPage submitLoginExpectingFailure() {
-//        driver.findElement(loginButtonLocator).submit();
-//        return new LoginPage(driver);
-//    }
-
-//    public HomePage loginAs(String username, String password) {
-//        typeUsername(username);
-//        typePassword(password);
-//        return submitLogin();
-//    }
-
-
-//https://comaqa.gitbook.io/selenium-webdriver-lectures/page-object-pattern.-arkhitektura-testovogo-proekta./ispolzovanie-patterna-page-object.
