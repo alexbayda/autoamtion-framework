@@ -2,7 +2,7 @@ package com.herokuapp.katalon.utilities;
 
 import org.apache.commons.lang.RandomStringUtils;
 
-public class RandomGenerator {
+public class RandomLoginGenerator {
     public static String getEmail() {
         return RandomStringUtils.randomAlphabetic(5) +
                 "@" +

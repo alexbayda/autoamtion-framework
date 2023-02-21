@@ -20,7 +20,7 @@ public class Driver {
                     driver = new FirefoxDriver();
                 }
                 case "edge" -> {
-                    System.setProperty("webdriver.edge.driver", "/path/to/edgedriver");
+                    System.setProperty("webdriver.edge.driver", "src/main/resources/msedgedriver.exe");
                     driver = new EdgeDriver();
                 }
                 default -> System.out.println("Invalid browser type");
