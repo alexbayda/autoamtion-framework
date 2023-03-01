@@ -25,7 +25,7 @@ public class LoginPageTests extends BaseTest {
     public void testSuccessfulLogin() {
         UserDto user = UserFactory.getValidUser();
         loginPage.signIn(user);
-        assertTrue(loginPage.isElementDisplayed(loginPage.bookAppointmentButton));
+        assertTrue(loginPage.isBookAppointmentButtonDisplayed());
     }
 
     @Test

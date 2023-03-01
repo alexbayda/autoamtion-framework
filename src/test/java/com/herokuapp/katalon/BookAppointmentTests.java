@@ -22,7 +22,7 @@ public class BookAppointmentTests extends BaseTest {
     @BeforeEach
     void setUp() {
         homePage.openHomePage();
-        assertTrue(homePage.isHomepageElementDisplayed(homePage.hamburgerMenuLocator));
+        assertTrue(homePage.isHomepageElementDisplayed());
     }
 
     @Test
@@ -30,13 +30,13 @@ public class BookAppointmentTests extends BaseTest {
         bookAppointment.clickBookAppointmentButton();
         UserDto user = UserFactory.getValidUser();
         loginPage.signIn(user);
-        assertTrue(loginPage.isElementDisplayed(loginPage.bookAppointmentButton));
+        assertTrue(loginPage.isBookAppointmentButtonDisplayed());
         bookAppointment.fillFacilityDropDownByText("Hongkong CURA Healthcare Center");
         bookAppointment.checkHospitalReadmission();
         clickRandomRadioButton(bookAppointment.getHealthCareRadioButtonList());
         bookAppointment.fillRandomDate();
         bookAppointment.fillCommentField("This is a comment");
         bookAppointment.submitAppointment();
-        assertTrue(bookAppointment.confirmationIsDisplayed(bookAppointment.summaryLocator));
+        assertTrue(bookAppointment.confirmationIsDisplayed());
     }
 }

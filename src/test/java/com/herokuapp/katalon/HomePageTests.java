@@ -15,13 +15,13 @@ public class HomePageTests extends BaseTest {
     @BeforeEach
     void setUp() {
         homePage.openHomePage();
-        assertTrue(homePage.isHomepageElementDisplayed(homePage.hamburgerMenuLocator));
+        assertTrue(homePage.isHomepageElementDisplayed());
     }
 
 
     @Test
     public void testHomePage() {
         homePage.openLoginPage();
-        assertTrue(homePage.isHomepageElementDisplayed(homePage.loginButtonLocator));
+        assertTrue(homePage.isHomepageElementDisplayed());
     }
 }

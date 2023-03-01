@@ -4,23 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45d3f410-3f3d-42ef-ab58-9692f78d51dd" name="Changes" comment="stabilization">
+    <list default="true" id="45d3f410-3f3d-42ef-ab58-9692f78d51dd" name="Changes" comment="stabilizations">
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/BookAppointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/BookAppointment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/pageobject/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomRadioButtonClicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/herokuapp/katalon/utilities/RandomRadioButtonClicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/msedgedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BookAppointmentTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/BookAppointmentTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/HomePageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/HomePageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/LoginPageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/herokuapp/katalon/LoginPageTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +118,7 @@
     &quot;vcs.patch.path&quot;: &quot;C:/Users/Oleksandr_Bayda/Desktop&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.ui-automation-framework [allureReport]">
+  <component name="RunManager" selected="Gradle.BookAppointmentTests">
     <configuration name="BookAppointmentTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -219,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BookAppointmentTests" />
+        <item itemvalue="Gradle.ui-automation-framework [clean]" />
         <item itemvalue="Gradle.ui-automation-framework [allureReport]" />
         <item itemvalue="Gradle.ui-automation-framework [check]" />
-        <item itemvalue="Gradle.BookAppointmentTests" />
         <item itemvalue="Gradle.ui-automation-framework [build]" />
-        <item itemvalue="Gradle.ui-automation-framework [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677003117863</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="stabilizations">
+      <created>1677664076712</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677664076712</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -346,7 +362,8 @@
     <MESSAGE value="optimize framework" />
     <MESSAGE value="add drivers" />
     <MESSAGE value="stabilization" />
-    <option name="LAST_COMMIT_MESSAGE" value="stabilization" />
+    <MESSAGE value="stabilizations" />
+    <option name="LAST_COMMIT_MESSAGE" value="stabilizations" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

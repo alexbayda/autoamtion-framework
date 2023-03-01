@@ -21,10 +21,10 @@ public class HomePage {
     private WebElement loginHamburgerButtonLocator;
 
     @FindBy(id = "menu-toggle")
-    public WebElement hamburgerMenuLocator;
+    private WebElement hamburgerMenuLocator;
 
     @FindBy(id = "btn-login")
-    public WebElement loginButtonLocator;
+    private WebElement loginButtonLocator;
 
     Logs logs = new Logs();
 
@@ -41,8 +41,8 @@ public class HomePage {
         logs.process("Login page has successfully opened");
     }
 
-    public boolean isHomepageElementDisplayed(WebElement element) {
-        WebDriverUtils.waitForElement(driver, element, 30);
+    public boolean isHomepageElementDisplayed() {
+        WebDriverUtils.waitForElement(driver, hamburgerMenuLocator, 30);
         return true;
     }
 

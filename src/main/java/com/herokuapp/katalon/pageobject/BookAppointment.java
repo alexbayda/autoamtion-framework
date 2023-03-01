@@ -45,7 +45,7 @@ public class BookAppointment {
     private WebElement bookAppointmentButtonLocator;
 
     @FindBy(id = "summary")
-    public WebElement summaryLocator;
+    private WebElement summaryLocator;
 
     @FindBy(css = "input[type='radio']")
     private List<WebElement> healthCareRadioButtonList;
@@ -77,8 +77,8 @@ public class BookAppointment {
         bookAppointmentButtonLocator.click();
     }
 
-    public boolean confirmationIsDisplayed(WebElement element) {
-        WebDriverUtils.waitForElement(driver, element, 30);
+    public boolean confirmationIsDisplayed() {
+        WebDriverUtils.waitForElement(driver, summaryLocator, 30);
         return true;
     }
 }

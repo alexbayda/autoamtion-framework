@@ -32,11 +32,12 @@ public class LoginPage {
 
     @FindBy(id = "btn-login")
     private WebElement logInButton;
+
     @FindBy(xpath = "//*[@id=\"login\"]/div/div/div[1]/p[2]")
     public WebElement loginErrorMessage;
 
     @FindBy(id = "btn-book-appointment")
-    public WebElement bookAppointmentButton;
+    private WebElement bookAppointmentButton;
 
 
     public void openLoginPage() {
@@ -71,4 +72,8 @@ public class LoginPage {
         logInButton.click();
     }
 
+    public boolean isBookAppointmentButtonDisplayed(){
+        isElementDisplayed(bookAppointmentButton);
+        return true;
+    }
 }
