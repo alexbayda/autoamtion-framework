@@ -12,7 +12,6 @@ public class RandomRadioButtonClicker {
         int randomIndex = random.nextInt(element.size());
         WebElement selectedRadioButton = element.get(randomIndex);
         selectedRadioButton.click();
-
     }
 }
 

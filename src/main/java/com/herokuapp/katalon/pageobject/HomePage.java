@@ -17,11 +17,11 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(css = "#sidebar-wrapper > ul > li:nth-child(4) > a")
+    private WebElement loginHamburgerButtonLocator;
+
     @FindBy(id = "menu-toggle")
     public WebElement hamburgerMenuLocator;
-
-    @FindBy(css = "#sidebar-wrapper > ul > li:nth-child(4) > a")
-    public WebElement loginHamburgerButtonLocator;
 
     @FindBy(id = "btn-login")
     public WebElement loginButtonLocator;

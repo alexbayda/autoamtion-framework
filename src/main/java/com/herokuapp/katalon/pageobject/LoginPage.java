@@ -23,17 +23,18 @@ public class LoginPage {
     static final Duration timeout = Duration.ofSeconds(15);
 
     @FindBy(id = "txt-username")
-    public WebElement userNameLocator;
+    private WebElement userNameLocator;
     @FindBy(id = "txt-password")
     private WebElement passwordLocator;
 
+    @FindBy(xpath = "//*[@id=\"weebly-lookup\"]/div[2]/div/button")
+    private WebElement nextButton;
+
+    @FindBy(id = "btn-login")
+    private WebElement logInButton;
     @FindBy(xpath = "//*[@id=\"login\"]/div/div/div[1]/p[2]")
     public WebElement loginErrorMessage;
 
-    @FindBy(xpath = "//*[@id=\"weebly-lookup\"]/div[2]/div/button")
-    public WebElement nextButton;
-    @FindBy(id = "btn-login")
-    public WebElement logInButton;
     @FindBy(id = "btn-book-appointment")
     public WebElement bookAppointmentButton;
 

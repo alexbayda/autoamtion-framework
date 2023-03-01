@@ -27,22 +27,22 @@ public class BookAppointment {
     Logs logs = new Logs();
 
     @FindBy(id = "btn-make-appointment")
-    public WebElement createNewProjectButton;
+    private WebElement createNewProjectButton;
 
     @FindBy(id = "combo_facility")
-    public WebElement facilityDropDownLocator;
+    private WebElement facilityDropDownLocator;
 
     @FindBy(id = "chk_hospotal_readmission")
-    public WebElement readmissionCheckmarkLocator;
+    private WebElement readmissionCheckmarkLocator;
 
     @FindBy(id = "txt_visit_date")
-    public WebElement enterDateLocator;
+    private WebElement enterDateLocator;
 
     @FindBy(id = "txt_comment")
-    public WebElement txtCommentLocator;
+    private WebElement txtCommentLocator;
 
     @FindBy(id = "btn-book-appointment")
-    public WebElement bookAppointmentButtonLocator;
+    private WebElement bookAppointmentButtonLocator;
 
     @FindBy(id = "summary")
     public WebElement summaryLocator;
