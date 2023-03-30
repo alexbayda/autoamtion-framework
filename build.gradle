@@ -11,10 +11,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
-    testImplementation 'org.testng:testng:7.7.0'
-    testImplementation 'org.testng:testng:7.7.0'
-    runtimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+    implementation 'org.testng:testng:7.7.0'
     implementation 'org.seleniumhq.selenium:selenium-java:4.7.1'
     implementation 'org.slf4j:slf4j-api:2.0.6'
     implementation 'org.slf4j:slf4j-simple:2.0.6'
@@ -22,12 +19,10 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-java-commons:2.9.6'
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
-
 }
 
 test {
     useTestNG()
-    useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
     }

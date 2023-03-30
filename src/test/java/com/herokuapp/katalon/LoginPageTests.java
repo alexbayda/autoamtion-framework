@@ -3,20 +3,24 @@ package com.herokuapp.katalon;
 import com.herokuapp.katalon.pageobject.LoginPage;
 import com.herokuapp.katalon.testdatalayer.UserFactory;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.PageFactory;
+import com.herokuapp.katalon.utilities.CSVUtilities;
+import com.herokuapp.katalon.utilities.TestListener;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class LoginPageTests extends BaseTest {
 
 
-    private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    LoginPage loginPage;
 
+    TestListener testListener;
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
+        loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
     }
 
@@ -26,6 +30,18 @@ public class LoginPageTests extends BaseTest {
         UserDto user = UserFactory.getValidUser();
         loginPage.signIn(user);
         assertTrue(loginPage.isBookAppointmentButtonDisplayed());
+    }
+
+    @Test
+    public void testCSVFileLogin() {
+        loginPage.signInFromCSVFile();
+        assertTrue(loginPage.isElementDisplayed(loginPage.loginErrorMessage));
+    }
+
+    @Test
+    public void testJSONFileLogin(){
+        loginPage.signInFromJSONFile();
+        assertTrue(loginPage.isElementDisplayed(loginPage.loginErrorMessage));
     }
 
     @Test
