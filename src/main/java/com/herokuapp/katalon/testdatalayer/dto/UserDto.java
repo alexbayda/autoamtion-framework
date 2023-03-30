@@ -7,6 +7,18 @@ public class UserDto {
     private String username;
     private String password;
 
+    private String postalCode;
+
+
+    public UserDto(){
+    }
+    public UserDto(String name, String surname, String username, String password, String postalCode){
+        this.name = name;
+        this.surname = surname;
+        this.username = username;
+        this.password = password;
+        this.postalCode = postalCode;
+    }
 
     public String getName() {
         return name;
@@ -19,17 +31,19 @@ public class UserDto {
     public String getSurname() {
         return surname;
     }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String email) {
-        this.username = email;
+    public String getPostalCode(){
+        return postalCode;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -38,5 +52,9 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setPostalCode(String postalCode){
+        this.postalCode = postalCode;
     }
 }

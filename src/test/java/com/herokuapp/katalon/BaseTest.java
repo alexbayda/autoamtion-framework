@@ -1,24 +1,25 @@
 package com.herokuapp.katalon;
 
 import com.herokuapp.katalon.driver.Driver;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import com.herokuapp.katalon.utilities.TestListener;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 
+@Listeners(TestListener.class)
 public class BaseTest {
 
+    static WebDriver driver;
 
-    WebDriver driver = new ChromeDriver();
-//    WebDriver driver = Driver.getDriver("chrome");
-
-    @BeforeEach
-    public void fullScreen(){
+    @BeforeMethod
+    public void fullScreen() {
+        driver = Driver.getDriver("firefox");
         driver.manage().window().maximize();
-
     }
-    @AfterEach
+
+    @AfterClass
     public void tearDown() {
-        driver.quit();
+        driver.close();
     }
 }

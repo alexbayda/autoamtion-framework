@@ -2,6 +2,8 @@ package com.herokuapp.katalon.pageobject;
 
 import com.herokuapp.katalon.logger.Logs;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
+import com.herokuapp.katalon.utilities.CSVUtilities;
+import com.herokuapp.katalon.utilities.JSONUtilities;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,6 +74,23 @@ public class LoginPage {
         logInButton.click();
     }
 
+    public void signInFromCSVFile() {
+        CSVUtilities csvUsers = new CSVUtilities();
+        for (UserDto user : csvUsers.usersList) {
+            userNameLocator.sendKeys(user.getName());
+            passwordLocator.sendKeys(user.getPassword());
+            logInButton.click();
+        }
+    }
+
+    public void signInFromJSONFile() {
+        JSONUtilities jsonUsers = new JSONUtilities();
+        for (UserDto user : jsonUsers.getUsersList()){
+            userNameLocator.sendKeys(user.getName());
+            passwordLocator.sendKeys(user.getPassword());
+            logInButton.click();
+        }
+    }
     public boolean isBookAppointmentButtonDisplayed(){
         isElementDisplayed(bookAppointmentButton);
         return true;

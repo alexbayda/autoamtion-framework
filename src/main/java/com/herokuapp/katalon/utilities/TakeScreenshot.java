@@ -14,7 +14,7 @@ public class TakeScreenshot {
 
     public static void takeScreenshot(WebDriver driver, String testName) throws IOException {
         File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        String screenshotName = testName + DateFormatUtils.format(new Date(), "hh.mm.dd.MM.yyyy") + ".png";
+        String screenshotName = testName + DateFormatUtils.format(new Date(), " hh.mm.dd.MM.yyyy") + ".png";
         FileUtils.copyFile(file, new File("Screenshots " + screenshotName));
     }
 }

@@ -1,5 +1,6 @@
 package com.herokuapp.katalon.utilities;
 
+import com.herokuapp.katalon.driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,8 +17,13 @@ public class WebDriverUtils {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locatorOfElementToWait));
     }
 
-    public static void waitForElement(WebDriver driver, WebElement elementToWait, int seconds) {
+    public static void waitForElement(WebDriver driver, WebElement elementToWait, int seconds) { //accept driver not as parameter get from drive class in method
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.visibilityOf(elementToWait));
+    }
+
+    public static void waitForElement(WebElement elementToWait, int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver("firefox"), Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.visibilityOf(elementToWait));
     }
 

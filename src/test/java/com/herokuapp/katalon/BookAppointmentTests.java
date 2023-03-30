@@ -5,12 +5,13 @@ import com.herokuapp.katalon.pageobject.HomePage;
 import com.herokuapp.katalon.pageobject.LoginPage;
 import com.herokuapp.katalon.testdatalayer.UserFactory;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.clickRandomRadioButton;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.getRandom;
+import static org.testng.Assert.assertTrue;
+
 
 public class BookAppointmentTests extends BaseTest {
 
@@ -19,7 +20,7 @@ public class BookAppointmentTests extends BaseTest {
     private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
         homePage.openHomePage();
         assertTrue(homePage.isHomepageElementDisplayed());
@@ -33,7 +34,7 @@ public class BookAppointmentTests extends BaseTest {
         assertTrue(loginPage.isBookAppointmentButtonDisplayed());
         bookAppointment.fillFacilityDropDownByText("Hongkong CURA Healthcare Center");
         bookAppointment.checkHospitalReadmission();
-        clickRandomRadioButton(bookAppointment.getHealthCareRadioButtonList());
+        getRandom(bookAppointment.getHealthCareRadioButtonList());
         bookAppointment.fillRandomDate();
         bookAppointment.fillCommentField("This is a comment");
         bookAppointment.submitAppointment();
