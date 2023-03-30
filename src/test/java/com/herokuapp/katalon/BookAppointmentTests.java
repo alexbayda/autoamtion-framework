@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.getRandom;
+import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
 import static org.testng.Assert.assertTrue;
 
 

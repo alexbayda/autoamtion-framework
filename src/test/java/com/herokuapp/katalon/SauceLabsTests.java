@@ -4,7 +4,7 @@ import com.herokuapp.katalon.pageobject.SauceLabs;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.getRandom;
+import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
 
 public class SauceLabsTests extends BaseTest{
 

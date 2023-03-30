@@ -8,6 +8,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver { //add file GitIgnore
     private static WebDriver driver; //need to getDriver without a parameter
 
+    public static WebDriver getDriver(){
+        if (driver == null){
+            System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver.exe");
+            driver = new FirefoxDriver();
+        }
+        return driver;
+    }
     public static WebDriver getDriver(String browser) {
         if (driver == null) {
             switch (browser) {

@@ -15,7 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import java.io.IOException;
 import java.util.List;
 
-import static com.herokuapp.katalon.utilities.RandomRadioButtonClicker.getRandom;
+import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
 import static org.testng.Assert.assertSame;
 import static org.testng.Assert.assertTrue;
 
@@ -91,7 +91,7 @@ public class SauceLabs {
             loginBox.sendKeys(user.getUsername());
             passwordBox.sendKeys(user.getPassword());
             loginButton.click();
-            WebDriverUtils.waitForElement(driver, inventoryList, 15);
+            WebDriverUtils.waitForElement(inventoryList, 15);
         }
     }
 
@@ -100,9 +100,9 @@ public class SauceLabs {
         assertTrue(shoppingCartBadge.isDisplayed()); //wrap into try/catch + screenshot
         cart.click();
         assertSame(addToCardButtonList,addToCardButtonList);
-        WebDriverUtils.waitForElement(driver, checkoutButton, 15);
+        WebDriverUtils.waitForElement(checkoutButton, 15);
         checkoutButton.click();
-        WebDriverUtils.waitForElement(driver, checkOutFirstName, 15);
+        WebDriverUtils.waitForElement(checkOutFirstName, 15);
     }
 
 
@@ -113,9 +113,9 @@ public class SauceLabs {
             checkOutLastName.sendKeys(user.getSurname());
             checkOutPostalCode.sendKeys(user.getPostalCode());
         }
-        WebDriverUtils.waitForElement(driver, checkOutContinueButton, 15);
+        WebDriverUtils.waitForElement(checkOutContinueButton, 15);
         checkOutContinueButton.click();
-        WebDriverUtils.waitForElement(driver, finishCheckoutButton, 15);
+        WebDriverUtils.waitForElement(finishCheckoutButton, 15);
         finishCheckoutButton.click();
     }
 

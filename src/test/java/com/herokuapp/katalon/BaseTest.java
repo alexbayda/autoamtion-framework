@@ -14,12 +14,12 @@ public class BaseTest {
 
     @BeforeMethod
     public void fullScreen() {
-        driver = Driver.getDriver("firefox");
+        driver = Driver.getDriver();
         driver.manage().window().maximize();
     }
 
     @AfterClass
     public void tearDown() {
-        driver.close();
+        driver.quit();
     }
 }

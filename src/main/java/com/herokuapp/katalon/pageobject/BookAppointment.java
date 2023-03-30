@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-import static com.herokuapp.katalon.utilities.WebDriverUtils.selectValueFromDropdown;
+import static com.herokuapp.katalon.utilities.RandomSelector.randomByText;
 
 @Getter
 public class BookAppointment {
@@ -58,7 +58,7 @@ public class BookAppointment {
     }
 
     public void fillFacilityDropDownByText(String text) {
-        selectValueFromDropdown(facilityDropDownLocator, text);
+        randomByText(facilityDropDownLocator, text);
     }
 
     public void checkHospitalReadmission() {
