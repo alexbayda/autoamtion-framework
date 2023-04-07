@@ -4,7 +4,6 @@ import com.herokuapp.katalon.driver.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -14,6 +13,11 @@ public class WebDriverUtils {
     public static void waitForElement(WebDriver driver, WebElement elementToWait, int seconds) { //accept driver not as parameter get from drive class in method
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.visibilityOf(elementToWait));
+    }
+
+    public static void waitForElementToDisappear(WebElement elementToWait, int seconds){
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.invisibilityOf(elementToWait));
     }
 
     public static void waitForElement(WebElement elementToWait, int seconds) {

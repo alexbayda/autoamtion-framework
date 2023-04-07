@@ -4,7 +4,7 @@ import com.herokuapp.katalon.logger.Logs;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
 import com.herokuapp.katalon.utilities.CSVUtilities;
 import com.herokuapp.katalon.utilities.JSONUtilities;
-import com.herokuapp.katalon.utilities.TakeScreenshot;
+import com.herokuapp.katalon.utilities.RandomLoginGenerator;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;
@@ -12,11 +12,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.IOException;
 import java.util.List;
 
 import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
-import static org.testng.Assert.assertSame;
+import static com.herokuapp.katalon.utilities.TakeScreenshot.takeScreenshot;
+import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 @Getter
@@ -28,6 +28,7 @@ public class SauceLabs {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     Logs logs = new Logs();
 
     @FindBy(xpath = "//*[@id=\"user-name\"]")
@@ -69,7 +70,7 @@ public class SauceLabs {
     @FindBy(css = "#finish")
     private WebElement finishCheckoutButton;
 
-    public void openHomePage(){
+    public void openHomePage() {
         driver.get("https://www.saucedemo.com/");
         WebDriverUtils.waitForElement(driver, loginBox, 15);
         assertTrue(passwordBox.isDisplayed());
@@ -77,17 +78,9 @@ public class SauceLabs {
         takeScreenshot("Home Page successfully opened");
     }
 
-    private void takeScreenshot(String screenShotName){
-        try{
-        TakeScreenshot.takeScreenshot(driver, screenShotName);}
-        catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
     public void signInFromJSONFile() {
         JSONUtilities jsonUsers = new JSONUtilities();
-        for (UserDto user : jsonUsers.getUsersList()){
+        for (UserDto user : jsonUsers.getUsersList()) {
             loginBox.sendKeys(user.getUsername());
             passwordBox.sendKeys(user.getPassword());
             loginButton.click();
@@ -95,20 +88,36 @@ public class SauceLabs {
         }
     }
 
-    public void buyRandomItem(){ //export as individual method
+    public void loginWithNegativeCredentials() { //user listener instead of try/catch (remove try/catch and apply in testClass)
+        String randomEmail = RandomLoginGenerator.getEmail();
+        String randomPassword = RandomLoginGenerator.getPassword();
+        loginBox.sendKeys(randomEmail);
+        passwordBox.sendKeys(randomPassword);
+        loginButton.click();
+        WebDriverUtils.waitForElementToDisappear(loginBox, 5);
+    }
+
+    public void buyRandomItem() {
         getRandom(getAddToCardButtonList());
-        assertTrue(shoppingCartBadge.isDisplayed()); //wrap into try/catch + screenshot
+        elementIsDisplayed(shoppingCartBadge); //wrap into try/catch + screenshot
         cart.click();
-        assertSame(addToCardButtonList,addToCardButtonList);
         WebDriverUtils.waitForElement(checkoutButton, 15);
         checkoutButton.click();
         WebDriverUtils.waitForElement(checkOutFirstName, 15);
     }
 
 
-    public void fillFormFromCsvAndBuy(){
+    public void elementIsDisplayed(WebElement element) {
+        assertTrue(element.isDisplayed());
+    }
+
+    public void elementIsNotDisplayed(WebElement element) {
+        assertFalse(element.isDisplayed());
+    }
+
+    public void fillFormFromCsvAndBuy() {
         CSVUtilities utilities = new CSVUtilities();
-        for (UserDto user : utilities.usersList){
+        for (UserDto user : utilities.usersList) {
             checkOutFirstName.sendKeys(user.getName());
             checkOutLastName.sendKeys(user.getSurname());
             checkOutPostalCode.sendKeys(user.getPostalCode());
@@ -118,15 +127,5 @@ public class SauceLabs {
         WebDriverUtils.waitForElement(finishCheckoutButton, 15);
         finishCheckoutButton.click();
     }
-
-//    public void verifyAddedItem(){
-//        List<String> itemNames = new ArrayList<>();
-//        for (WebElement item : getAddToCardButtonList()){
-//        String itemName = item.findElement(By.xpath("//*[@id=\"inventory_container\"]/div"))
-//                .getText();
-//            itemNames.add(itemName);
-//        }
-//        assertTrue(addToCardButtonList.contains(itemNames));
-//    }
 }
 
