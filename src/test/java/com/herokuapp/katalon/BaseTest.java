@@ -13,7 +13,8 @@ public class BaseTest {
     static WebDriver driver;
 
     @BeforeMethod
-    public void fullScreen() {
+    public void setup() {
+        Driver.setup("firefox");
         driver = Driver.getDriver();
         driver.manage().window().maximize();
     }
