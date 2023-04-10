@@ -1,26 +1,19 @@
 package com.herokuapp.katalon;
 
-import com.herokuapp.katalon.driver.Driver;
+import com.herokuapp.katalon.driver.DriverManager;
 import com.herokuapp.katalon.utilities.TestListener;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
+
+import java.io.IOException;
 
 @Listeners(TestListener.class)
 public class BaseTest {
 
-    static WebDriver driver;
-
-    @BeforeMethod
-    public void setup() {
-        Driver.setup("firefox");
-        driver = Driver.getDriver();
-        driver.manage().window().maximize();
+    @BeforeTest
+    public void setup() throws IOException {
+        DriverManager.setup("firefox");
     }
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
+
 }

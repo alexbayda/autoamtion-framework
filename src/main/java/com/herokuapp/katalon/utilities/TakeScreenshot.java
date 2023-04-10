@@ -1,6 +1,6 @@
 package com.herokuapp.katalon.utilities;
 
-import com.herokuapp.katalon.driver.Driver;
+import com.herokuapp.katalon.driver.DriverManager;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.time.DateFormatUtils;
 import org.openqa.selenium.OutputType;
@@ -14,7 +14,7 @@ public class TakeScreenshot {
 
     public static void takeScreenshot(String testName) {
         try{
-        File file = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.FILE);
+        File file = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
         String screenshotName = testName + DateFormatUtils.format(new Date(), " hh.mm.dd.MM.yyyy") + ".png";
         FileUtils.copyFile(file, new File("Screenshots " + screenshotName));}
         catch (IOException e){

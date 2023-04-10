@@ -1,6 +1,6 @@
 package com.herokuapp.katalon.utilities;
 
-import com.herokuapp.katalon.driver.Driver;
+import com.herokuapp.katalon.driver.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,12 +16,12 @@ public class WebDriverUtils {
     }
 
     public static void waitForElementToDisappear(WebElement elementToWait, int seconds){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.invisibilityOf(elementToWait));
     }
 
     public static void waitForElement(WebElement elementToWait, int seconds) {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(seconds));
         wait.until(ExpectedConditions.visibilityOf(elementToWait));
     }
 

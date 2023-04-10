@@ -5,7 +5,6 @@ import com.herokuapp.katalon.pageobject.HomePage;
 import com.herokuapp.katalon.pageobject.LoginPage;
 import com.herokuapp.katalon.testdatalayer.UserFactory;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -15,9 +14,9 @@ import static org.testng.Assert.assertTrue;
 
 public class BookAppointmentTests extends BaseTest {
 
-    private final BookAppointment bookAppointment = PageFactory.initElements(driver, BookAppointment.class);
-    private final HomePage homePage = PageFactory.initElements(driver, HomePage.class);
-    private final LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
+    private BookAppointment bookAppointment;
+    private HomePage homePage;
+    private LoginPage loginPage;
 
 
     @BeforeMethod

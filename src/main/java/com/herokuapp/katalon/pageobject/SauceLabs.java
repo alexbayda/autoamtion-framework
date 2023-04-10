@@ -1,5 +1,6 @@
 package com.herokuapp.katalon.pageobject;
 
+import com.herokuapp.katalon.driver.DriverManager;
 import com.herokuapp.katalon.logger.Logs;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
 import com.herokuapp.katalon.utilities.CSVUtilities;
@@ -7,7 +8,6 @@ import com.herokuapp.katalon.utilities.JSONUtilities;
 import com.herokuapp.katalon.utilities.RandomLoginGenerator;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
 import lombok.Getter;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,11 +22,8 @@ import static org.testng.Assert.assertTrue;
 @Getter
 public class SauceLabs {
 
-    private final WebDriver driver;
-
-    public SauceLabs(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+    public SauceLabs() {
+        PageFactory.initElements(DriverManager.getDriver(),this);
     }
 
     Logs logs = new Logs();
@@ -71,8 +68,8 @@ public class SauceLabs {
     private WebElement finishCheckoutButton;
 
     public void openHomePage() {
-        driver.get("https://www.saucedemo.com/");
-        WebDriverUtils.waitForElement(driver, loginBox, 15);
+        DriverManager.getDriver().get("https://www.saucedemo.com/");
+        WebDriverUtils.waitForElement(loginBox, 15);
         assertTrue(passwordBox.isDisplayed());
         logs.process("Home Page successfully opened");
         takeScreenshot("Home Page successfully opened");
@@ -88,7 +85,7 @@ public class SauceLabs {
         }
     }
 
-    public void loginWithNegativeCredentials() { //user listener instead of try/catch (remove try/catch and apply in testClass)
+    public void loginWithNegativeCredentials() {
         String randomEmail = RandomLoginGenerator.getEmail();
         String randomPassword = RandomLoginGenerator.getPassword();
         loginBox.sendKeys(randomEmail);

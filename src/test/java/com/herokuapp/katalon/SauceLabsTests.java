@@ -9,19 +9,18 @@ import org.testng.annotations.Test;
 import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
 
 @Listeners(TestListener.class)
-public class SauceLabsTests extends BaseTest{
+public class SauceLabsTests extends BaseTest {
 
 
-    SauceLabs sauceLabs;
-
+    private SauceLabs sauceLabs;
 
     @BeforeMethod
-    void setUp() {
-        sauceLabs = new SauceLabs(driver);
+    public void initSauceLabs() {
+        sauceLabs = new SauceLabs();
     }
 
     @Test
-    public void checkOutE2E(){
+    public void checkOutE2E() {
         sauceLabs.openHomePage();
         sauceLabs.signInFromJSONFile();
         getRandom(sauceLabs.getAddToCardButtonList());
@@ -33,6 +32,6 @@ public class SauceLabsTests extends BaseTest{
     public void negativeLogin() {
         sauceLabs.openHomePage();
         sauceLabs.loginWithNegativeCredentials();
-        }
     }
+}
 
