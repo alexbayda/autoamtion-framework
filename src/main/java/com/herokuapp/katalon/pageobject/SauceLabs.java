@@ -8,6 +8,7 @@ import com.herokuapp.katalon.utilities.JSONUtilities;
 import com.herokuapp.katalon.utilities.RandomLoginGenerator;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
 import lombok.Getter;
+import org.example.model.UsersModel;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,6 +22,12 @@ import static org.testng.Assert.assertTrue;
 
 @Getter
 public class SauceLabs {
+
+
+    UsersModel usersModel = new UsersModel();
+//    public SauceLabs() {
+//        PageFactory.initElements(DriverManager.setupClass(),this);
+//    }
 
     public SauceLabs() {
         PageFactory.initElements(DriverManager.getDriver(),this);

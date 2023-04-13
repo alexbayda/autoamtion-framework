@@ -15,5 +15,10 @@ public class BaseTest {
         DriverManager.setup("firefox");
     }
 
+//    @BeforeMethod
+//    public void setUpDriver(){
+//        DriverManager.setupClass();
+//    }
+
 
 }

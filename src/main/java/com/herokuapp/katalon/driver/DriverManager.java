@@ -13,15 +13,21 @@ import java.util.Properties;
 public class DriverManager {
     private static WebDriver driver;
 
-    //create property file to store driver path and other files -done
 
-    //create a small project that has users model(getter setters) and make a jar file and add them as a dependency
+    //different property files for different envs dev/qa/stage - String env
+    //borgia webdriver management
 
-    //maven package plugin / how to build .jar file using gradle
 
-    //Retentiion policy i Target аннотації з Java core
+//    public static WebDriver setupClass(){
+//        if(driver == null){
+//            throw new IllegalArgumentException("404");
+//        }
+//        WebDriverManager.firefoxdriver().setup();
+//        driver = new FirefoxDriver();
+//        return driver;
+//    }
+//
 
-    //investigate the initialization order, create before and after methods and get their output into console + a constructor of an initialized object
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -58,7 +64,7 @@ public class DriverManager {
     @AfterClass
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
+            driver.close();
         }
     }
 }
