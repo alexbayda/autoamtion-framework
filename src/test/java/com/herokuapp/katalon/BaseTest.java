@@ -10,15 +10,12 @@ import java.io.IOException;
 @Listeners(TestListener.class)
 public class BaseTest {
 
+
     @BeforeTest
     public void setup() throws IOException {
         DriverManager.setup("firefox");
     }
 
-//    @BeforeMethod
-//    public void setUpDriver(){
-//        DriverManager.setupClass();
-//    }
 
 
 }

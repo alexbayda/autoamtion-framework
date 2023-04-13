@@ -25,9 +25,6 @@ public class SauceLabs {
 
 
     UsersModel usersModel = new UsersModel();
-//    public SauceLabs() {
-//        PageFactory.initElements(DriverManager.setupClass(),this);
-//    }
 
     public SauceLabs() {
         PageFactory.initElements(DriverManager.getDriver(),this);

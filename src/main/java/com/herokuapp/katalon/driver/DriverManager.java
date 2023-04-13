@@ -1,5 +1,6 @@
 package com.herokuapp.katalon.driver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,17 +17,6 @@ public class DriverManager {
 
     //different property files for different envs dev/qa/stage - String env
     //borgia webdriver management
-
-
-//    public static WebDriver setupClass(){
-//        if(driver == null){
-//            throw new IllegalArgumentException("404");
-//        }
-//        WebDriverManager.firefoxdriver().setup();
-//        driver = new FirefoxDriver();
-//        return driver;
-//    }
-//
 
 
     public static WebDriver getDriver() {
@@ -48,7 +38,8 @@ public class DriverManager {
                 driver = new ChromeDriver();
             }
             case "firefox" -> {
-                System.setProperty("webdriver.gecko.driver", props.getProperty("webdriver.gecko.driver"));
+                WebDriverManager.firefoxdriver().setup();
+//                System.setProperty("webdriver.gecko.driver", props.getProperty("webdriver.gecko.driver"));
                 driver = new FirefoxDriver();
             }
             case "edge" -> {
