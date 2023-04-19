@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
 import java.util.List;
 
 import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
@@ -71,8 +72,7 @@ public class SauceLabs {
     @FindBy(css = "#finish")
     private WebElement finishCheckoutButton;
 
-    public void openHomePage() {
-        DriverManager.getDriver().get("https://www.saucedemo.com/");
+    public void openHomePage() throws IOException {
         WebDriverUtils.waitForElement(loginBox, 15);
         assertTrue(passwordBox.isDisplayed());
         logs.process("Home Page successfully opened");
