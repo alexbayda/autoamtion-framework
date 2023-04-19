@@ -1,15 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SauceLabsTests Suite" verbose="1">
     <listeners>
-        <listener class-name="com.herokuapp.katalon.utilities.TestListener" />
+        <listener class-name="com.herokuapp.katalon.utilities.TestListener"/>
     </listeners>
+    <parameter name="env" value="dev"/>
     <test name="Negative Login Test">
         <classes>
             <class name="com.herokuapp.katalon.SauceLabsTests">
                 <methods>
-                    <include name="negativeLogin" />
+                    <include name="negativeLogin"/>
                 </methods>
             </class>
+            <class name="com.herokuapp.katalon.driver.EnvironmentSetup" />
         </classes>
     </test>
 </suite>

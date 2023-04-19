@@ -9,7 +9,7 @@
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
-
+*.lock
 # Package Files #
 *.war
 *.nar
@@ -17,7 +17,7 @@
 *.zip
 *.tar.gz
 *.rar
-
+*.bin
 *.iml
 *.DS_Store
 .allure/
@@ -34,10 +34,10 @@ allure-results/
 settings.xml
 build/
 .gradle/
-
+*.bin
 # Eclipse files
 bin/
-
+*.lock
 # binary files
 *.bin
 *.lock

@@ -29,6 +29,7 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
+    systemProperty('env', 'dev')
 
     allure {
         version = "2.21.0"
