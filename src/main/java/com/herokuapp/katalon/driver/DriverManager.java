@@ -5,19 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public class DriverManager {
+
+    //move temp screenshots to build directory
+    //complete properties file
+    //fix chrome + edge driver
+    // to be able to set env property though cli or xml property file //to be able to create new Properties only when EnvSetup is called
+
     private static WebDriver driver;
-
-
-    //different property files for different envs dev/qa/stage - String env
-    //borgia webdriver management
-
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -27,23 +28,22 @@ public class DriverManager {
     }
 
 
-    public static void setup(String browser) throws IOException {
+    public static void setup(BrowserType browser) throws IOException {
         Properties props = new Properties();
         FileInputStream path = new FileInputStream("src/main/resources/config.properties");
         props.load(path);
 
         switch (browser) {
-            case "chrome" -> {
-                System.setProperty("webdriver.chrome.driver", props.getProperty("webdriver.chrome.driver"));
+            case CHROME -> {
+                WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             }
-            case "firefox" -> {
+            case FIREFOX -> {
                 WebDriverManager.firefoxdriver().setup();
-//                System.setProperty("webdriver.gecko.driver", props.getProperty("webdriver.gecko.driver"));
                 driver = new FirefoxDriver();
             }
-            case "edge" -> {
-                System.setProperty("webdriver.edge.driver", props.getProperty("webdriver.edge.driver"));
+            case EDGE -> {
+                WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
             }
             default -> throw new IllegalArgumentException("Invalid browser type" + browser);
@@ -52,10 +52,10 @@ public class DriverManager {
     }
 
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
-        if (driver != null) {
-            driver.close();
+        if (driver != null) {  
+            driver.quit();
         }
     }
 }

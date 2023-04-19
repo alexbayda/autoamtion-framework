@@ -16,7 +16,7 @@ public class TakeScreenshot {
         try{
         File file = ((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.FILE);
         String screenshotName = testName + DateFormatUtils.format(new Date(), " hh.mm.dd.MM.yyyy") + ".png";
-        FileUtils.copyFile(file, new File("Screenshots " + screenshotName));}
+        FileUtils.copyFile(file, new File("build/tmp/Screenshots" + screenshotName));}
         catch (IOException e){
             e.printStackTrace();
         }

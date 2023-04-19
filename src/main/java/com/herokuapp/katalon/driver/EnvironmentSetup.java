@@ -1,20 +1,26 @@
 package com.herokuapp.katalon.driver;
 
+import com.beust.jcommander.Parameter;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public class EnvironmentSetup {
 
-    private final String env = System.getProperty("dev");
-    private final Properties props = new Properties();
+    public EnvironmentSetup(){
+    }
+    public static final Properties props = new Properties();
 
-    public void connectEnv() throws IOException {
-        props.load(new FileInputStream(env + ".properties"));
-        String dbUrl = props.getProperty("db.url");
-        String dbUsername = props.getProperty("db.username");
-        String dbPassword = props.getProperty("db.password");
-        String serverUrl = props.getProperty("server.url");
+
+    @Parameter
+    private static final String env = System.getProperty("environment");
+
+    public static void connectEnv() throws IOException {
+        props.load(new FileInputStream("src\\main\\resources\\" + env + ".properties"));
+        String websiteUrl = props.getProperty("website.url");
+        DriverManager.getDriver().get(websiteUrl);
     }
 }
 
