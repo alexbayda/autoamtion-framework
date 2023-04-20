@@ -8,7 +8,9 @@
         <classes>
             <class name="com.herokuapp.katalon.SauceLabsTests">
                 <methods>
+                    <include name="checkOutE2E"/>
                     <include name="negativeLogin"/>
+                    <include name="logoutE2E"/>
                 </methods>
             </class>
             <class name="com.herokuapp.katalon.driver.EnvironmentSetup" />

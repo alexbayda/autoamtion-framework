@@ -16,8 +16,14 @@ public class DriverManager {
     //move temp screenshots to build directory
     //complete properties file
     //fix chrome + edge driver
+
     // to be able to set env property though cli or xml property file //to be able to create new Properties only when EnvSetup is called
 
+
+
+    //check testNG docs to see if they changed passing parameters
+
+    //Process class
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -34,19 +40,20 @@ public class DriverManager {
         props.load(path);
 
         switch (browser) {
-            case CHROME -> {
+            case CHROME:
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
-            }
-            case FIREFOX -> {
+                break;
+            case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
-            }
-            case EDGE -> {
+                break;
+            case EDGE:
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
-            }
-            default -> throw new IllegalArgumentException("Invalid browser type" + browser);
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid browser type" + browser);
         }
         driver.manage().window().maximize();
     }
@@ -54,8 +61,9 @@ public class DriverManager {
 
     @AfterMethod
     public void tearDown() {
-        if (driver != null) {  
+        if (driver != null) {
             driver.quit();
+            driver = null;
         }
     }
 }

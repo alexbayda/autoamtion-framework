@@ -7,7 +7,7 @@ import org.testng.annotations.Listeners;
 
 import java.io.IOException;
 
-import static com.herokuapp.katalon.driver.BrowserType.CHROME;
+import static com.herokuapp.katalon.driver.BrowserType.FIREFOX;
 
 @Listeners(TestListener.class)
 public class BaseTest {
@@ -15,7 +15,7 @@ public class BaseTest {
 
     @BeforeTest
     public void setup() throws IOException {
-        DriverManager.setup(CHROME); //set enum
+        DriverManager.setup(FIREFOX); //set enum
     }
 
 

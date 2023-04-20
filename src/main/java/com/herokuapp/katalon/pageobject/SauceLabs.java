@@ -72,6 +72,15 @@ public class SauceLabs {
     @FindBy(css = "#finish")
     private WebElement finishCheckoutButton;
 
+    @FindBy(css = ".error-button")
+    private WebElement errorMessageButton;
+
+    @FindBy(css = "#react-burger-menu-btn")
+    private WebElement hamburgerMenu;
+
+    @FindBy(css = "#logout_sidebar_link")
+    private WebElement logoutButton;
+
     public void openHomePage() throws IOException {
         WebDriverUtils.waitForElement(loginBox, 15);
         assertTrue(passwordBox.isDisplayed());
@@ -95,7 +104,8 @@ public class SauceLabs {
         loginBox.sendKeys(randomEmail);
         passwordBox.sendKeys(randomPassword);
         loginButton.click();
-        WebDriverUtils.waitForElementToDisappear(loginBox, 5);
+//        WebDriverUtils.waitForElementToDisappear(loginBox, 5);
+        WebDriverUtils.waitForElement(errorMessageButton, 5);
     }
 
     public void buyRandomItem() {
@@ -107,6 +117,13 @@ public class SauceLabs {
         WebDriverUtils.waitForElement(checkOutFirstName, 15);
     }
 
+    public void logout(){
+        elementIsDisplayed(hamburgerMenu);
+        hamburgerMenu.click();
+        WebDriverUtils.waitForElement(logoutButton,10);
+        logoutButton.click();
+        elementIsDisplayed(loginButton);
+    }
 
     public void elementIsDisplayed(WebElement element) {
         assertTrue(element.isDisplayed());

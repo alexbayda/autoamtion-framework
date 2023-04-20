@@ -11,10 +11,14 @@ public class EnvironmentSetup {
     }
     public static final Properties props = new Properties();
 
+//    private static final String env = System.getProperty("env");
 
-    private static final String env = System.getProperty("env");
-
-    public static void connectEnv() throws IOException {
+//    public static void connectEnv() throws IOException {
+//        props.load(new FileInputStream("src\\main\\resources\\" + env + ".properties"));
+//        String websiteUrl = props.getProperty("website.url");
+//        DriverManager.getDriver().get(websiteUrl);
+//    }
+    public static void connectEnv(String env) throws IOException {
         props.load(new FileInputStream("src\\main\\resources\\" + env + ".properties"));
         String websiteUrl = props.getProperty("website.url");
         DriverManager.getDriver().get(websiteUrl);

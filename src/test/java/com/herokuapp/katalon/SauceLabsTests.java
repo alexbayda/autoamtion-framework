@@ -1,6 +1,7 @@
 package com.herokuapp.katalon;
 
 import com.herokuapp.katalon.driver.DriverManager;
+import com.herokuapp.katalon.driver.EnvironmentSetup;
 import com.herokuapp.katalon.driver.StartDriver;
 import com.herokuapp.katalon.pageobject.SauceLabs;
 import com.herokuapp.katalon.utilities.TestListener;
@@ -21,16 +22,25 @@ public class SauceLabsTests extends BaseTest {
     }
 
 
+//    @BeforeMethod
+//    public void setUp() throws IOException {
+//        System.out.println("***Setting up...***");
+//        sauceLabs = new SauceLabs();
+//        EnvironmentSetup.connectEnv();
+//    }
 
     @BeforeMethod
-    public void setUp() {
+    @Parameters(value = {"env"})
+    public void setUp(String env) throws IOException {
         System.out.println("***Setting up...***");
         sauceLabs = new SauceLabs();
+        EnvironmentSetup.connectEnv(env);
     }
 
     @AfterTest
     public void tearDown() {
         System.out.println("***Tearing down...***");
+        DriverManager.getDriver().close();
     }
 
     @StartDriver
@@ -47,6 +57,13 @@ public class SauceLabsTests extends BaseTest {
     public void negativeLogin() throws IOException {
         sauceLabs.openHomePage();
         sauceLabs.loginWithNegativeCredentials();
+    }
+
+    @Test
+    public void logoutE2E() throws IOException {
+        sauceLabs.openHomePage();
+        sauceLabs.signInFromJSONFile();
+        sauceLabs.logout();
     }
 }
 
