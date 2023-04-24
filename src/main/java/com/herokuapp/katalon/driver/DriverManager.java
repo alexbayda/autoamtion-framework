@@ -7,23 +7,15 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
 
 public class DriverManager {
 
-    //move temp screenshots to build directory
-    //complete properties file
-    //fix chrome + edge driver
-
-    // to be able to set env property though cli or xml property file //to be able to create new Properties only when EnvSetup is called
 
 
-
-    //check testNG docs to see if they changed passing parameters
-
-    //Process class
+    //implement http://www.eliasnogueira.com/easily-manage-properties-files-in-java-with-owner/
+    //L4J2 logs
+    //
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -35,10 +27,6 @@ public class DriverManager {
 
 
     public static void setup(BrowserType browser) throws IOException {
-        Properties props = new Properties();
-        FileInputStream path = new FileInputStream("src/main/resources/config.properties");
-        props.load(path);
-
         switch (browser) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();

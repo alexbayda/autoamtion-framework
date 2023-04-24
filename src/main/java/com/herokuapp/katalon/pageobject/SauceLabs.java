@@ -13,7 +13,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import java.io.IOException;
 import java.util.List;
 
 import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
@@ -81,7 +80,7 @@ public class SauceLabs {
     @FindBy(css = "#logout_sidebar_link")
     private WebElement logoutButton;
 
-    public void openHomePage() throws IOException {
+    public void openHomePage() {
         WebDriverUtils.waitForElement(loginBox, 15);
         assertTrue(passwordBox.isDisplayed());
         logs.process("Home Page successfully opened");
@@ -104,13 +103,12 @@ public class SauceLabs {
         loginBox.sendKeys(randomEmail);
         passwordBox.sendKeys(randomPassword);
         loginButton.click();
-//        WebDriverUtils.waitForElementToDisappear(loginBox, 5);
         WebDriverUtils.waitForElement(errorMessageButton, 5);
     }
 
     public void buyRandomItem() {
         getRandom(getAddToCardButtonList());
-        elementIsDisplayed(shoppingCartBadge); //wrap into try/catch + screenshot
+        elementIsDisplayed(shoppingCartBadge);
         cart.click();
         WebDriverUtils.waitForElement(checkoutButton, 15);
         checkoutButton.click();
