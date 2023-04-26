@@ -5,17 +5,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-
-import java.io.IOException;
+import org.testng.annotations.AfterClass;
 
 public class DriverManager {
 
 
 
-    //implement http://www.eliasnogueira.com/easily-manage-properties-files-in-java-with-owner/
-    //L4J2 logs
-    //
+    //add more gradle task for regression + smoke
+    //watch about gradle
+    //read and try selenium grid (use Nastias compukter)
+
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
@@ -26,7 +25,7 @@ public class DriverManager {
     }
 
 
-    public static void setup(BrowserType browser) throws IOException {
+    public static void setup(BrowserType browser) {
         switch (browser) {
             case CHROME:
                 WebDriverManager.chromedriver().setup();
@@ -47,7 +46,7 @@ public class DriverManager {
     }
 
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();

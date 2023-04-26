@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id "io.qameta.allure" version "2.11.2"
+    id 'application'
+    id 'idea'
 }
 
 group 'org.example'
@@ -21,17 +23,39 @@ dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.8.3'
     implementation 'org.slf4j:slf4j-api:2.0.6'
     implementation 'org.slf4j:slf4j-simple:2.0.6'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
     implementation 'io.qameta.allure:allure-maven:2.12.0'
     testImplementation 'io.qameta.allure:allure-java-commons:2.21.0'
     compileOnly 'org.projectlombok:lombok:1.18.26'
     annotationProcessor 'org.projectlombok:lombok:1.18.26'
     implementation files('libs/UsersModel-1.0-SNAPSHOT.jar')
     implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+    implementation 'org.aeonbits.owner:owner:1.0.12'
 
 }
 
+task testRegression(type: Test) {
+    description = 'Runs the regression tests'
+    useTestNG() {
+        setSuiteName("resources/regression.xml")
+    }
+    systemProperty('env', 'dev')
+    allure {
+        version = "2.21.0"
+    }
+}
+
+
+task testSmoke(type: Test) {
+    print("Inside of task")
+}
+
+
 test {
-    useTestNG()
+    description = 'Runs all tests'
+    useTestNG() {
+        setSuiteName("resources/suite.xml")
+    }
     testLogging {
         events "passed", "skipped", "failed"
     }

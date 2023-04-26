@@ -1,36 +1,35 @@
 package com.herokuapp.katalon.pageobject;
 
 import com.herokuapp.katalon.driver.DriverManager;
-import com.herokuapp.katalon.logger.Logs;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
 import com.herokuapp.katalon.utilities.CSVUtilities;
 import com.herokuapp.katalon.utilities.JSONUtilities;
 import com.herokuapp.katalon.utilities.RandomLoginGenerator;
 import com.herokuapp.katalon.utilities.WebDriverUtils;
 import lombok.Getter;
-import org.example.model.UsersModel;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static com.herokuapp.katalon.driver.EnvironmentSetup.generalConfig;
 import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
 import static com.herokuapp.katalon.utilities.TakeScreenshot.takeScreenshot;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
 @Getter
+@Log4j2
 public class SauceLabs {
 
 
-    UsersModel usersModel = new UsersModel();
+//    UsersModel usersModel = new UsersModel();
 
     public SauceLabs() {
         PageFactory.initElements(DriverManager.getDriver(),this);
     }
-
-    Logs logs = new Logs();
 
     @FindBy(xpath = "//*[@id=\"user-name\"]")
     private WebElement loginBox;
@@ -81,9 +80,11 @@ public class SauceLabs {
     private WebElement logoutButton;
 
     public void openHomePage() {
+        log.info("starting app");
+        DriverManager.getDriver().get(generalConfig.url());
         WebDriverUtils.waitForElement(loginBox, 15);
         assertTrue(passwordBox.isDisplayed());
-        logs.process("Home Page successfully opened");
+        log.info("Home Page successfully opened");
         takeScreenshot("Home Page successfully opened");
     }
 
