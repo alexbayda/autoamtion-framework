@@ -5,8 +5,7 @@
     </listeners>
     <test name="Regression">
         <classes>
-            <class name="com.herokuapp.katalon.SauceLabsTests">
-            </class>
+            <class name="com.herokuapp.katalon.SauceLabsTests"/>
         </classes>
     </test>
 </suite>

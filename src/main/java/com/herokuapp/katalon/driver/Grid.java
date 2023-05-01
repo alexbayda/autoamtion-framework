@@ -3,19 +3,15 @@ package com.herokuapp.katalon.driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Grid {
 
-        WebDriver driver;
-
-        @Test
-        void setUp() throws MalformedURLException {
+        public static void main(String[] args) throws Exception {
+                URL hubUrl = new URL("http://localhost:4444/wd/hub");
                 FirefoxOptions options = new FirefoxOptions();
-                driver = new RemoteWebDriver(new URL("http://192.168.0.193:4444"), options);
-                driver.get("https://google.com");
+                WebDriver driver = new RemoteWebDriver(hubUrl, options);
+                driver.get("https://www.google.com");
         }
 }

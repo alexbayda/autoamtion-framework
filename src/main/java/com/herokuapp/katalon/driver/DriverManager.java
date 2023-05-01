@@ -9,11 +9,12 @@ import org.testng.annotations.AfterClass;
 
 public class DriverManager {
 
-
-
-    //add more gradle task for regression + smoke
     //watch about gradle
-    //read and try selenium grid (use Nastias compukter)
+
+    //selenoid +linux +docker
+
+    //selenede - create new project and make same flow (E2E sauce labs test) + maven
+
 
     private static WebDriver driver;
 

@@ -34,22 +34,17 @@ dependencies {
 
 }
 
-task testRegression(type: Test) {
-    description = 'Runs the regression tests'
-    useTestNG() {
-        setSuiteName("resources/regression.xml")
-    }
+tasks.withType(Test){
     systemProperty('env', 'dev')
+
     allure {
         version = "2.21.0"
     }
 }
 
-
 task testSmoke(type: Test) {
     print("Inside of task")
 }
-
 
 test {
     description = 'Runs all tests'
@@ -59,11 +54,13 @@ test {
     testLogging {
         events "passed", "skipped", "failed"
     }
-    systemProperty('env', 'dev')
+    print("RUNNING")
+}
 
-    allure {
-        version = "2.21.0"
+task testRegression(type: Test) {
+    description = 'Runs the regression tests'
+    useTestNG() {
+        suites("src\\test\\resources\\regression.xml")
+        print("ATENTION" + getSuiteName())
     }
-
-
 }
