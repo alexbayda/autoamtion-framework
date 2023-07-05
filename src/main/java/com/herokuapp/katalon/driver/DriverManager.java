@@ -9,49 +9,42 @@ import org.testng.annotations.AfterClass;
 
 public class DriverManager {
 
-    //watch about gradle
-
-    //selenoid +linux +docker
-
-    //selenede - create new project and make same flow (E2E sauce labs test) + maven
-
-
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
         if (driver == null) {
             throw new IllegalStateException("404");
         }
-        return driver;
+        return driver.get();
     }
 
 
     public static void setup(BrowserType browser) {
         switch (browser) {
-            case CHROME:
+            case CHROME -> {
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-                break;
-            case FIREFOX:
+                driver.set(new ChromeDriver());
+            }
+            case FIREFOX -> {
                 WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-                break;
-            case EDGE:
+                driver.set(new FirefoxDriver());
+            }
+            case EDGE -> {
                 WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid browser type" + browser);
+                driver.set(new EdgeDriver());
+            }
+            default -> throw new IllegalArgumentException("Invalid browser type" + browser);
         }
-        driver.manage().window().maximize();
+        getDriver().manage().window().maximize();
     }
 
 
     @AfterClass
     public void tearDown() {
         if (driver != null) {
-            driver.quit();
-            driver = null;
+            getDriver().quit();
+            driver.remove();
         }
     }
 }
+
