@@ -5,10 +5,6 @@ import com.herokuapp.katalon.pageobject.SauceLabs;
 import com.herokuapp.katalon.utilities.TestListener;
 import org.testng.annotations.*;
 
-import java.io.IOException;
-
-import static com.herokuapp.katalon.utilities.RandomSelector.getRandom;
-
 @Listeners(TestListener.class)
 public class SauceLabsTests extends BaseTest {
 
@@ -25,12 +21,12 @@ public class SauceLabsTests extends BaseTest {
         sauceLabs = new SauceLabs();
     }
 
-//    @BeforeMethod
-//    @Parameters(value = {"env"})
-//    public void setUp(String env) {
-//        System.out.println("***Setting up...***");
-//        sauceLabs = new SauceLabs();
-//    }
+    @BeforeMethod
+    @Parameters(value = {"env"})
+    public void setUp(String env) {
+        System.out.println("***Setting up...***");
+        sauceLabs = new SauceLabs();
+    }
 
     @AfterTest
     public void tearDown() {
@@ -42,19 +38,18 @@ public class SauceLabsTests extends BaseTest {
     public void checkOutE2E() {
         sauceLabs.openHomePage();
         sauceLabs.signInFromJSONFile();
-        getRandom(sauceLabs.getAddToCardButtonList());
         sauceLabs.buyRandomItem();
         sauceLabs.fillFormFromCsvAndBuy();
     }
 
     @Test
-    public void negativeLogin() throws IOException {
+    public void negativeLogin() {
         sauceLabs.openHomePage();
         sauceLabs.loginWithNegativeCredentials();
     }
 
     @Test
-    public void logoutE2E() throws IOException {
+    public void logoutE2E() {
         sauceLabs.openHomePage();
         sauceLabs.signInFromJSONFile();
         sauceLabs.logout();
