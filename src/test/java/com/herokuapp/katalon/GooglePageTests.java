@@ -4,12 +4,25 @@ import com.herokuapp.katalon.driver.BrowserType;
 import com.herokuapp.katalon.driver.DriverManager;
 import com.herokuapp.katalon.pageobject.GooglePage;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.util.Iterator;
+import java.util.stream.Stream;
 
 public class GooglePageTests {
 
     private GooglePage googlePage;
 
+
+    @DataProvider(name = "SearchQueries") //dataProvider -comes form of Array
+    public Iterator<Object[]> getSearchQueries() {
+        return Stream.of(
+                new Object[]{"cats"},
+                new Object[]{"dogs"},
+                new Object[]{"ducks"}
+        ).iterator();
+    }
 
     @BeforeMethod
     public void innit() {
@@ -17,11 +30,10 @@ public class GooglePageTests {
         DriverManager.setup(BrowserType.FIREFOX);
     }
 
-
-    @Test
-    public void searchAndClick1() {
+    @Test(dataProvider = "SearchQueries")
+    public void searchAndClick1(String searchQuery) {
         googlePage.openGooglePage();
-        googlePage.typeSearchQuery("cats");
+        googlePage.typeSearchQuery(searchQuery);
         System.out.println("Thread id: " + Thread.currentThread().getId());
         googlePage.pressSearchButton();
         DriverManager.getDriver().close();
@@ -47,12 +59,10 @@ public class GooglePageTests {
         DriverManager.getDriver().close();
     }
 
-    //dataprovider -come is form of Array
-    //@Test(threadPoolSize = 3, invocationCount = 3, timeOut = 2000)
+
     //TestNg***
     //selenium
 
-    // bring up 3 browsers to type "something" + Thread id (make thread safe)
     //jenkins + groovy
     //springBoot for testNg
     //annotations
