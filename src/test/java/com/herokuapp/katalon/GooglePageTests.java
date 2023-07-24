@@ -2,7 +2,10 @@ package com.herokuapp.katalon;
 
 import com.herokuapp.katalon.driver.BrowserType;
 import com.herokuapp.katalon.driver.DriverManager;
+import com.herokuapp.katalon.driver.RobustWebDriver;
 import com.herokuapp.katalon.pageobject.GooglePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -25,7 +28,7 @@ public class GooglePageTests {
     }
 
     @BeforeMethod
-    public void innit() {
+    public void init() {
         googlePage = new GooglePage();
         DriverManager.setup(BrowserType.FIREFOX);
     }
@@ -59,20 +62,43 @@ public class GooglePageTests {
         DriverManager.getDriver().close();
     }
 
+    @Test
+    public void wrappedDriverStaleElementTest() {
+        RobustWebDriver driver = new RobustWebDriver(DriverManager.getDriver());
+        driver.get("https://www.google.com");
+        WebElement searchInput = driver.findElement(By.name("q"));
+        driver.navigate().refresh();
+        searchInput.sendKeys("Selenium");
+        driver.quit();
+    }
 
-    //TestNg***
-    //selenium
-
-    //jenkins + groovy
-    //springBoot for testNg
-    //annotations
-    //retry analyzer
-    //injector annotation
-    //junit report to record statistics into xml then into DB (fail pass, time to execute)
-//        googlePage.refreshPage();
-//googlePage.typeSearchQuery("somethingElse");
-    //switch to
-    //use findElements with empty list
-    //3 types of statements
-    //try H2 db
+    @Test
+    public void unwrappedDriverStaleElementTest() {
+        DriverManager.getDriver().get("https://www.google.com");
+        WebElement searchInput = DriverManager.getDriver().findElement(By.name("q"));
+        DriverManager.getDriver().navigate().refresh();
+        searchInput.sendKeys("Selenium");
+        DriverManager.getDriver().quit();
+    }
 }
+
+
+
+
+
+
+
+
+//TestNg***
+//selenium
+
+//jenkins + groovy
+//springBoot for testNg
+//annotations
+//retry analyzer
+//injector annotation
+//junit report to record statistics into xml then into DB (fail pass, time to execute)
+//googlePage.typeSearchQuery("somethingElse");
+//switch to
+//use findElements with empty list
+//3 types of statements
