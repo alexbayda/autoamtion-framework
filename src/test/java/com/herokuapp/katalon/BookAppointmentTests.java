@@ -1,5 +1,6 @@
 package com.herokuapp.katalon;
 
+import com.herokuapp.katalon.driver.DriverManager;
 import com.herokuapp.katalon.pageobject.BookAppointment;
 import com.herokuapp.katalon.pageobject.HomePage;
 import com.herokuapp.katalon.pageobject.LoginPage;
@@ -21,6 +22,9 @@ public class BookAppointmentTests extends BaseTest {
 
     @BeforeMethod
     void setUp() {
+        homePage = new HomePage(DriverManager.getDriver());
+        bookAppointment = new BookAppointment(DriverManager.getDriver());
+        loginPage = new LoginPage(DriverManager.getDriver());
         homePage.openHomePage();
         assertTrue(homePage.isHomepageElementDisplayed());
     }

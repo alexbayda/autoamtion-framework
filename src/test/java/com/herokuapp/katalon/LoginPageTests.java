@@ -1,5 +1,6 @@
 package com.herokuapp.katalon;
 
+import com.herokuapp.katalon.driver.DriverManager;
 import com.herokuapp.katalon.pageobject.LoginPage;
 import com.herokuapp.katalon.testdatalayer.UserFactory;
 import com.herokuapp.katalon.testdatalayer.dto.UserDto;
@@ -14,6 +15,7 @@ public class LoginPageTests extends BaseTest {
 
     @Test
     public void testSuccessfulLogin() {
+        loginPage = new LoginPage(DriverManager.getDriver());
         UserDto user = UserFactory.getValidUser();
         loginPage.signIn(user);
         assertTrue(loginPage.isBookAppointmentButtonDisplayed());

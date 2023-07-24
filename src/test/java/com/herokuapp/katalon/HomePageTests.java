@@ -18,9 +18,10 @@ public class HomePageTests extends BaseTest {
     private GooglePage googlePage;
 
     @BeforeMethod
-    public void innit() throws Exception {
-//        googlePage = (GooglePage) instance.getClass().getClassLoader().loadClass("com.herokuapp.katalon.pageobject.GooglePage").newInstance();
-        googlePage = (GooglePage) Class.forName("com.herokuapp.katalon.pageobject.GooglePage").newInstance();
+    public void innit() {
+        DriverManager.getDriver();
+        googlePage = new GooglePage();
+        homePage = new HomePage(DriverManager.getDriver());
     }
 
 
