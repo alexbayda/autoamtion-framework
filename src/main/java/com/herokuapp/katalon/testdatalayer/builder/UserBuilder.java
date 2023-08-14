@@ -7,7 +7,7 @@ public class UserBuilder {
     public UserDto user = new UserDto();
 
     public UserDto make() {
-        return user;
+        return new UserDto();//create copy Constructor
     }
 
     public UserBuilder setName(String name) {

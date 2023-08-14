@@ -12,19 +12,19 @@ public class WebElementUtils {
     private WebElementUtils(){
     }
 
-    static void callMethod(WebElement element, Consumer<WebElement> method) {
+    public static void callMethod(WebElement element, Consumer<WebElement> method) {
         method.accept(element);
     }
 
-    static <U> void callMethod(WebElement element, BiConsumer<WebElement, U> method, U parameter) {
+    public static <U> void callMethod(WebElement element, BiConsumer<WebElement, U> method, U parameter) {
         method.accept(element, parameter);
     }
 
-    static <T> T callMethodWithReturn(WebElement element, Function<WebElement, T> method) {
+    public static <T> T callMethodWithReturn(WebElement element, Function<WebElement, T> method) {
         return method.apply(element);
     }
 
-    static <T, U> T callMethodWithReturn(WebElement element, BiFunction<WebElement, U, T> method, U parameter) {
+    public static <T, U> T callMethodWithReturn(WebElement element, BiFunction<WebElement, U, T> method, U parameter) {
         return method.apply(element, parameter);
     }
 }

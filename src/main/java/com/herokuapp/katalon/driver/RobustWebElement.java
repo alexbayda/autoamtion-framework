@@ -1,5 +1,6 @@
 package com.herokuapp.katalon.driver;
 
+import com.herokuapp.katalon.utilities.WebElementUtils;
 import org.openqa.selenium.*;
 
 import java.util.List;
@@ -24,6 +25,21 @@ public class RobustWebElement implements WebElement {
     }
 
     void executeMethodWithRetries(Consumer<WebElement> method) {
+        int retries = 0;
+        while (retries < MAX_RETRIES) {
+            try {
+                 WebElementUtils.callMethod(originalElement, method);
+                return;
+            } catch (StaleElementReferenceException ex) {
+                refreshElement();
+            }
+            retries++;
+        }
+        throw new StaleElementReferenceException(SERE);
+    }
+
+    private void refreshElement() {
+        this.originalElement = driver.findElement(by);
     }
 
     <T> T executeMethodWithRetries(Function<WebElement, T> method) {
@@ -55,7 +71,9 @@ public class RobustWebElement implements WebElement {
 
     @Override
     public void sendKeys(CharSequence... keysToSend) {
-
+        System.out.println("sending keys");
+        Consumer<WebElement> consumer = webElement -> originalElement.sendKeys(keysToSend);
+        executeMethodWithRetries(consumer);
     }
 
     @Override
@@ -65,66 +83,66 @@ public class RobustWebElement implements WebElement {
 
     @Override
     public String getTagName() {
-        return null;
+        return originalElement.getTagName();
     }
 
     @Override
     public String getAttribute(String name) {
-        return null;
+        return originalElement.getAttribute(name);
     }
 
     @Override
     public boolean isSelected() {
-        return false;
+        return originalElement.isSelected();
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return originalElement.isEnabled();
     }
 
     @Override
     public String getText() {
-        return null;
+        return originalElement.getText();
     }
 
     @Override
     public List<WebElement> findElements(By by) {
-        return null;
+        return originalElement.findElements(by);
     }
 
     @Override
     public WebElement findElement(By by) {
-        return null;
+        return originalElement.findElement(by);
     }
 
     @Override
     public boolean isDisplayed() {
-        return false;
+        return originalElement.isDisplayed();
     }
 
     @Override
     public Point getLocation() {
-        return null;
+        return originalElement.getLocation();
     }
 
     @Override
     public Dimension getSize() {
-        return null;
+        return originalElement.getSize();
     }
 
     @Override
     public Rectangle getRect() {
-        return null;
+        return originalElement.getRect();
     }
 
     @Override
     public String getCssValue(String propertyName) {
-        return null;
+        return originalElement.getCssValue(propertyName);
     }
 
     @Override
     public <X> X getScreenshotAs(OutputType<X> target) throws WebDriverException {
-        return null;
+        return originalElement.getScreenshotAs(target);
     }
 }

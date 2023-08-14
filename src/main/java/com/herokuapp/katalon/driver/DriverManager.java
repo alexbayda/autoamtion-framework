@@ -38,7 +38,6 @@ public class DriverManager {
         getDriver().manage().window().maximize();
     }
 
-
     @AfterClass
     public void tearDown() {
         if (driver != null) {
